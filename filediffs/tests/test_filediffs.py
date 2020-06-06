@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from filediffs.filediffs import file_diffs
+from filediffs import file_diffs
 
 
 def test_file_diffs_are_created():
