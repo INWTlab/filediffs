@@ -15,12 +15,12 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Set up Python 3.7
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v2
       with:
         python-version: 3.7
     - name: Install dependencies
       run: >-
-        pip install setuptools wheel twine poetry --user
+        pip install poetry --user
     - name: Build a binary wheel and a source tarball
       run: >-
         poetry build
