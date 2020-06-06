@@ -26,4 +26,5 @@ jobs:
         poetry build
     - name: Run Tests
       run: >-
+        poetry install
         poetry run pytest -v
