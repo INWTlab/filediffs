@@ -1,0 +1,32 @@
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-the-package:
+    name: Build poetry package
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@master
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - name: Install dependencies
+      run: >-
+        pip install poetry wheel setuptools cython
+    - name: Build a binary wheel and a source tarball
+      run: >-
+        poetry build
+    - name: Poetry Install
+      run: >-
+        poetry install
+    - name: Run Pytests
+      run: >-
+        poetry run pytest -v
