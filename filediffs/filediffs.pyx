@@ -11,7 +11,7 @@ signifies that the record is found in file A
 A negative value means file B
 """
 
-from libc.stdio cimport FILE, fopen, fprintf, fclose, perror, fgets, stdout, printf, fflush
+from libc.stdio cimport FILE, fopen, fprintf, fclose, perror, fgets
 from libcpp.string cimport string
 from cpython cimport bool
 
@@ -33,7 +33,6 @@ cpdef file_diffs(char*filename_1,
     # /* opening file 1 for reading */
     fp = fopen(filename_1, "r")
     if fp == NULL:
-        # printf(bytes("Saved lines present in both files to: " + str(outpath_lines_present_in_both_files) + "\n", "utf-8"))
         perror(bytes("Error opening " + str(filename_1), "utf-8"))
         return error_return
 
@@ -123,11 +122,11 @@ cpdef file_diffs(char*filename_1,
     fclose(fp1_only)
     fclose(fp2_only)
     if verbose:
-        printf(bytes("Saved lines present in both files to: " + str(outpath_lines_present_in_both_files) + "\n", "utf-8"))
-        fflush(stdout)
-        printf(bytes("Saved lines present in file 1 only to: " + str(outpath_lines_present_only_in_file1) + "\n", "utf-8"))
-        fflush(stdout)
-        printf(bytes("Saved lines present in file 2 only to: " + str(outpath_lines_present_only_in_file2) + "\n", "utf-8"))
-        fflush(stdout)
+        pystring1 = "Saved lines present in both files to: " + str(outpath_lines_present_in_both_files) + "\n"
+        print(pystring1)
+        pystring2 = "Saved lines present in file 1 only to: " + str(outpath_lines_present_only_in_file1) + "\n"
+        print(pystring2)
+        pystring3 = "Saved lines present in file 2 only to: " + str(outpath_lines_present_only_in_file2) + "\n"
+        print(pystring3)
 
     return lines_only_in_file_1, lines_only_in_file_2
