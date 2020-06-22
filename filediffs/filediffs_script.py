@@ -1,7 +1,9 @@
-def main():
-    import argparse
-    from filediffs.filediffs import file_diffs
+import argparse
 
+from filediffs.filediffs import file_diffs
+
+
+def main():
     # Argument Parsing
     parser = argparse.ArgumentParser("Compare files for differences. Example usage:\n"
                                      "filediffs filediffs/tests/data/file_1.txt filediffs/tests/data/file_2.txt \n"
