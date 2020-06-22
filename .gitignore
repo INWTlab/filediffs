@@ -1,7 +1,7 @@
 .pytest_cache
 filediffs.egg-info
 .idea
-build/*
+build
 filediffs/filediffs.cp37-win_amd64.exp
 filediffs/filediffs.cp37-win_amd64.lib
 filediffs/filediffs.cp37-win_amd64.pyd
