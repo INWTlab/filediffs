@@ -20,10 +20,13 @@ setup(
     author_email='sebastian.cattes@inwt-statistics.de',
     long_description_content_type="text/markdown",
     url='https://github.com/INWTlab/filediffs',
-    package_data={'filediffs': [os.path.join(os.path.dirname(__file__), 'filediffs' , "filediffs.pyx")]},
-    extensions=[Extension("filediffs", [os.path.join(os.path.dirname(__file__), 'filediffs' , "filediffs.pyx")])],
-    ext_modules=cythonize(Extension("filediffs", [os.path.join(os.path.dirname(__file__), 'filediffs' , "filediffs.pyx")])),
+    package_data={'filediffs': [os.path.join(os.path.dirname(__file__), 'filediffs' , "filediffs_cy.pyx")]},
+    extensions=[Extension("filediffs", [os.path.join(os.path.dirname(__file__), 'filediffs' , "filediffs_cy.pyx")])],
+    ext_modules=cythonize(Extension("filediffs", [os.path.join(os.path.dirname(__file__), 'filediffs' , "filediffs_cy.pyx")])),
     cmdclass={'build_ext': new_build_ext},
+    entry_points = {
+        'console_scripts': ['filediffs=filediffs.filediffs_script:main'],
+    },
     requires=['cython'],
     license='MIT',
     classifiers=(

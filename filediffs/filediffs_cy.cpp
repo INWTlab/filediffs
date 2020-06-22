@@ -7,7 +7,7 @@
         "language": "c++",
         "name": "filediffs",
         "sources": [
-            "filediffs/filediffs.pyx"
+            "filediffs/filediffs_cy.pyx"
         ]
     },
     "module_name": "filediffs"
@@ -845,7 +845,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "filediffs/filediffs.pyx",
+  "filediffs/filediffs_cy.pyx",
   "stringsource",
   "type.pxd",
   "bool.pxd",
@@ -853,16 +853,16 @@ static const char *__pyx_f[] = {
 };
 
 /*--- Type declarations ---*/
-struct __pyx_opt_args_9filediffs_file_diffs;
+struct __pyx_opt_args_9filediffs_file_diffs_cy;
 
-/* "filediffs.pyx":18
+/* "filediffs/filediffs_cy.pyx":18
  * from cpython cimport bool
  * 
- * cpdef file_diffs(char*filename_1,             # <<<<<<<<<<<<<<
+ * cpdef file_diffs_cy(char*filename_1,             # <<<<<<<<<<<<<<
  *                  char*filename_2,
  *                  char*outpath_lines_present_in_both_files="lines_present_in_both_files.txt",
  */
-struct __pyx_opt_args_9filediffs_file_diffs {
+struct __pyx_opt_args_9filediffs_file_diffs_cy {
   int __pyx_n;
   char *outpath_lines_present_in_both_files;
   char *outpath_lines_present_only_in_file1;
@@ -1317,7 +1317,7 @@ static PyTypeObject *__pyx_ptype_7cpython_7complex_complex = 0;
 /* Module declarations from 'cpython' */
 
 /* Module declarations from 'filediffs' */
-static PyObject *__pyx_f_9filediffs_file_diffs(char *, char *, int __pyx_skip_dispatch, struct __pyx_opt_args_9filediffs_file_diffs *__pyx_optional_args); /*proto*/
+static PyObject *__pyx_f_9filediffs_file_diffs_cy(char *, char *, int __pyx_skip_dispatch, struct __pyx_opt_args_9filediffs_file_diffs_cy *__pyx_optional_args); /*proto*/
 static std::string __pyx_convert_string_from_py_std__in_string(PyObject *); /*proto*/
 #define __Pyx_MODULE_NAME "filediffs"
 extern int __pyx_module_is_main_filediffs;
@@ -1371,29 +1371,29 @@ static PyObject *__pyx_kp_s_that_contains_lines_present_in;
 static PyObject *__pyx_kp_s_that_contains_lines_present_onl;
 static PyObject *__pyx_kp_s_utf_8;
 static PyObject *__pyx_n_s_verbose;
-static PyObject *__pyx_pf_9filediffs_file_diffs(CYTHON_UNUSED PyObject *__pyx_self, char *__pyx_v_filename_1, char *__pyx_v_filename_2, char *__pyx_v_outpath_lines_present_in_both_files, char *__pyx_v_outpath_lines_present_only_in_file1, char *__pyx_v_outpath_lines_present_only_in_file2, PyBoolObject *__pyx_v_verbose); /* proto */
+static PyObject *__pyx_pf_9filediffs_file_diffs_cy(CYTHON_UNUSED PyObject *__pyx_self, char *__pyx_v_filename_1, char *__pyx_v_filename_2, char *__pyx_v_outpath_lines_present_in_both_files, char *__pyx_v_outpath_lines_present_only_in_file1, char *__pyx_v_outpath_lines_present_only_in_file2, PyBoolObject *__pyx_v_verbose); /* proto */
 static __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_items = {0, &__pyx_n_s_items, 0, 0, 0};
 static PyObject *__pyx_int_1;
 static PyObject *__pyx_int_neg_1;
 /* Late includes */
 
-/* "filediffs.pyx":18
+/* "filediffs/filediffs_cy.pyx":18
  * from cpython cimport bool
  * 
- * cpdef file_diffs(char*filename_1,             # <<<<<<<<<<<<<<
+ * cpdef file_diffs_cy(char*filename_1,             # <<<<<<<<<<<<<<
  *                  char*filename_2,
  *                  char*outpath_lines_present_in_both_files="lines_present_in_both_files.txt",
  */
 
-static PyObject *__pyx_pw_9filediffs_1file_diffs(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *__pyx_v_filename_2, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_9filediffs_file_diffs *__pyx_optional_args) {
+static PyObject *__pyx_pw_9filediffs_1file_diffs_cy(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_f_9filediffs_file_diffs_cy(char *__pyx_v_filename_1, char *__pyx_v_filename_2, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_9filediffs_file_diffs_cy *__pyx_optional_args) {
   char *__pyx_v_outpath_lines_present_in_both_files = ((char *)((char *)"lines_present_in_both_files.txt"));
-  char *__pyx_v_outpath_lines_present_only_in_file1 = ((char *)((char *)"outpath_lines_present_only_in_file1.txt"));
-  char *__pyx_v_outpath_lines_present_only_in_file2 = ((char *)((char *)"outpath_lines_present_only_in_file2.txt"));
+  char *__pyx_v_outpath_lines_present_only_in_file1 = ((char *)((char *)"lines_present_only_in_file1.txt"));
+  char *__pyx_v_outpath_lines_present_only_in_file2 = ((char *)((char *)"lines_present_only_in_file2.txt"));
 
-  /* "filediffs.pyx":23
- *                  char*outpath_lines_present_only_in_file1="outpath_lines_present_only_in_file1.txt",
- *                  char*outpath_lines_present_only_in_file2="outpath_lines_present_only_in_file2.txt",
+  /* "filediffs/filediffs_cy.pyx":23
+ *                  char*outpath_lines_present_only_in_file1="lines_present_only_in_file1.txt",
+ *                  char*outpath_lines_present_only_in_file2="lines_present_only_in_file2.txt",
  *                  bool verbose=True):             # <<<<<<<<<<<<<<
  *     cdef FILE *fp
  *     cdef FILE *fp2
@@ -1441,7 +1441,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("file_diffs", 0);
+  __Pyx_RefNannySetupContext("file_diffs_cy", 0);
   if (__pyx_optional_args) {
     if (__pyx_optional_args->__pyx_n > 0) {
       __pyx_v_outpath_lines_present_in_both_files = __pyx_optional_args->outpath_lines_present_in_both_files;
@@ -1457,7 +1457,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     }
   }
 
-  /* "filediffs.pyx":27
+  /* "filediffs/filediffs_cy.pyx":27
  *     cdef FILE *fp2
  *     cdef char ln_str[6000]
  *     cdef dict comparer_dict = {}             # <<<<<<<<<<<<<<
@@ -1469,7 +1469,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
   __pyx_v_comparer_dict = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "filediffs.pyx":28
+  /* "filediffs/filediffs_cy.pyx":28
  *     cdef char ln_str[6000]
  *     cdef dict comparer_dict = {}
  *     cdef Py_ssize_t error_return = -1             # <<<<<<<<<<<<<<
@@ -1478,7 +1478,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   __pyx_v_error_return = -1L;
 
-  /* "filediffs.pyx":31
+  /* "filediffs/filediffs_cy.pyx":31
  *     cdef Py_ssize_t v
  *     cdef bytes k
  *     cdef string progress_report = b"Compared lines from each file: "             # <<<<<<<<<<<<<<
@@ -1488,7 +1488,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
   __pyx_t_2 = __pyx_convert_string_from_py_std__in_string(__pyx_kp_b_Compared_lines_from_each_file); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 31, __pyx_L1_error)
   __pyx_v_progress_report = __pyx_t_2;
 
-  /* "filediffs.pyx":34
+  /* "filediffs/filediffs_cy.pyx":34
  * 
  *     # /[inserted by cython to avoid comment start]* opening file 1 for reading *[inserted by cython to avoid comment closer]/
  *     fp = fopen(filename_1, "r")             # <<<<<<<<<<<<<<
@@ -1497,7 +1497,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   __pyx_v_fp = fopen(__pyx_v_filename_1, ((char const *)"r"));
 
-  /* "filediffs.pyx":35
+  /* "filediffs/filediffs_cy.pyx":35
  *     # /[inserted by cython to avoid comment start]* opening file 1 for reading *[inserted by cython to avoid comment closer]/
  *     fp = fopen(filename_1, "r")
  *     if fp == NULL:             # <<<<<<<<<<<<<<
@@ -1507,7 +1507,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
   __pyx_t_3 = ((__pyx_v_fp == NULL) != 0);
   if (__pyx_t_3) {
 
-    /* "filediffs.pyx":36
+    /* "filediffs/filediffs_cy.pyx":36
  *     fp = fopen(filename_1, "r")
  *     if fp == NULL:
  *         perror(bytes("Error opening " + str(filename_1), "utf-8"))             # <<<<<<<<<<<<<<
@@ -1537,7 +1537,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     perror(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "filediffs.pyx":37
+    /* "filediffs/filediffs_cy.pyx":37
  *     if fp == NULL:
  *         perror(bytes("Error opening " + str(filename_1), "utf-8"))
  *         return error_return             # <<<<<<<<<<<<<<
@@ -1551,7 +1551,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "filediffs.pyx":35
+    /* "filediffs/filediffs_cy.pyx":35
  *     # /[inserted by cython to avoid comment start]* opening file 1 for reading *[inserted by cython to avoid comment closer]/
  *     fp = fopen(filename_1, "r")
  *     if fp == NULL:             # <<<<<<<<<<<<<<
@@ -1560,7 +1560,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   }
 
-  /* "filediffs.pyx":40
+  /* "filediffs/filediffs_cy.pyx":40
  * 
  *     # /[inserted by cython to avoid comment start]* opening file 2 for reading *[inserted by cython to avoid comment closer]/
  *     fp2 = fopen(filename_2, "r")             # <<<<<<<<<<<<<<
@@ -1569,7 +1569,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   __pyx_v_fp2 = fopen(__pyx_v_filename_2, ((char const *)"r"));
 
-  /* "filediffs.pyx":41
+  /* "filediffs/filediffs_cy.pyx":41
  *     # /[inserted by cython to avoid comment start]* opening file 2 for reading *[inserted by cython to avoid comment closer]/
  *     fp2 = fopen(filename_2, "r")
  *     if fp2 == NULL:             # <<<<<<<<<<<<<<
@@ -1579,7 +1579,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
   __pyx_t_3 = ((__pyx_v_fp2 == NULL) != 0);
   if (__pyx_t_3) {
 
-    /* "filediffs.pyx":42
+    /* "filediffs/filediffs_cy.pyx":42
  *     fp2 = fopen(filename_2, "r")
  *     if fp2 == NULL:
  *         perror(bytes("Error opening " + str(filename_2), "utf-8"))             # <<<<<<<<<<<<<<
@@ -1609,7 +1609,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     perror(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "filediffs.pyx":43
+    /* "filediffs/filediffs_cy.pyx":43
  *     if fp2 == NULL:
  *         perror(bytes("Error opening " + str(filename_2), "utf-8"))
  *         return error_return             # <<<<<<<<<<<<<<
@@ -1623,7 +1623,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "filediffs.pyx":41
+    /* "filediffs/filediffs_cy.pyx":41
  *     # /[inserted by cython to avoid comment start]* opening file 2 for reading *[inserted by cython to avoid comment closer]/
  *     fp2 = fopen(filename_2, "r")
  *     if fp2 == NULL:             # <<<<<<<<<<<<<<
@@ -1632,7 +1632,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   }
 
-  /* "filediffs.pyx":45
+  /* "filediffs/filediffs_cy.pyx":45
  *         return error_return
  * 
  *     fp_both = fopen(outpath_lines_present_in_both_files, "w")             # <<<<<<<<<<<<<<
@@ -1641,7 +1641,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   __pyx_v_fp_both = fopen(__pyx_v_outpath_lines_present_in_both_files, ((char const *)"w"));
 
-  /* "filediffs.pyx":46
+  /* "filediffs/filediffs_cy.pyx":46
  * 
  *     fp_both = fopen(outpath_lines_present_in_both_files, "w")
  *     if fp_both == NULL:             # <<<<<<<<<<<<<<
@@ -1651,7 +1651,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
   __pyx_t_3 = ((__pyx_v_fp_both == NULL) != 0);
   if (__pyx_t_3) {
 
-    /* "filediffs.pyx":47
+    /* "filediffs/filediffs_cy.pyx":47
  *     fp_both = fopen(outpath_lines_present_in_both_files, "w")
  *     if fp_both == NULL:
  *         perror("Error opening " + str(outpath_lines_present_in_both_files) + " that contains lines present in both files'")             # <<<<<<<<<<<<<<
@@ -1673,7 +1673,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     perror(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "filediffs.pyx":48
+    /* "filediffs/filediffs_cy.pyx":48
  *     if fp_both == NULL:
  *         perror("Error opening " + str(outpath_lines_present_in_both_files) + " that contains lines present in both files'")
  *         return error_return             # <<<<<<<<<<<<<<
@@ -1687,7 +1687,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     __pyx_t_4 = 0;
     goto __pyx_L0;
 
-    /* "filediffs.pyx":46
+    /* "filediffs/filediffs_cy.pyx":46
  * 
  *     fp_both = fopen(outpath_lines_present_in_both_files, "w")
  *     if fp_both == NULL:             # <<<<<<<<<<<<<<
@@ -1696,7 +1696,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   }
 
-  /* "filediffs.pyx":50
+  /* "filediffs/filediffs_cy.pyx":50
  *         return error_return
  * 
  *     fp1_only = fopen(outpath_lines_present_only_in_file1, "w")             # <<<<<<<<<<<<<<
@@ -1705,7 +1705,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   __pyx_v_fp1_only = fopen(__pyx_v_outpath_lines_present_only_in_file1, ((char const *)"w"));
 
-  /* "filediffs.pyx":51
+  /* "filediffs/filediffs_cy.pyx":51
  * 
  *     fp1_only = fopen(outpath_lines_present_only_in_file1, "w")
  *     if fp1_only == NULL:             # <<<<<<<<<<<<<<
@@ -1715,7 +1715,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
   __pyx_t_3 = ((__pyx_v_fp1_only == NULL) != 0);
   if (__pyx_t_3) {
 
-    /* "filediffs.pyx":52
+    /* "filediffs/filediffs_cy.pyx":52
  *     fp1_only = fopen(outpath_lines_present_only_in_file1, "w")
  *     if fp1_only == NULL:
  *         perror("Error opening " + str(outpath_lines_present_only_in_file1) + " that contains lines present only in" +             # <<<<<<<<<<<<<<
@@ -1734,7 +1734,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "filediffs.pyx":53
+    /* "filediffs/filediffs_cy.pyx":53
  *     if fp1_only == NULL:
  *         perror("Error opening " + str(outpath_lines_present_only_in_file1) + " that contains lines present only in" +
  *                str(filename_1))             # <<<<<<<<<<<<<<
@@ -1747,7 +1747,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "filediffs.pyx":52
+    /* "filediffs/filediffs_cy.pyx":52
  *     fp1_only = fopen(outpath_lines_present_only_in_file1, "w")
  *     if fp1_only == NULL:
  *         perror("Error opening " + str(outpath_lines_present_only_in_file1) + " that contains lines present only in" +             # <<<<<<<<<<<<<<
@@ -1762,7 +1762,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     perror(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "filediffs.pyx":54
+    /* "filediffs/filediffs_cy.pyx":54
  *         perror("Error opening " + str(outpath_lines_present_only_in_file1) + " that contains lines present only in" +
  *                str(filename_1))
  *         return error_return             # <<<<<<<<<<<<<<
@@ -1776,7 +1776,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     __pyx_t_4 = 0;
     goto __pyx_L0;
 
-    /* "filediffs.pyx":51
+    /* "filediffs/filediffs_cy.pyx":51
  * 
  *     fp1_only = fopen(outpath_lines_present_only_in_file1, "w")
  *     if fp1_only == NULL:             # <<<<<<<<<<<<<<
@@ -1785,7 +1785,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   }
 
-  /* "filediffs.pyx":56
+  /* "filediffs/filediffs_cy.pyx":56
  *         return error_return
  * 
  *     fp2_only = fopen(outpath_lines_present_only_in_file2, "w")             # <<<<<<<<<<<<<<
@@ -1794,7 +1794,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   __pyx_v_fp2_only = fopen(__pyx_v_outpath_lines_present_only_in_file2, ((char const *)"w"));
 
-  /* "filediffs.pyx":57
+  /* "filediffs/filediffs_cy.pyx":57
  * 
  *     fp2_only = fopen(outpath_lines_present_only_in_file2, "w")
  *     if fp2_only == NULL:             # <<<<<<<<<<<<<<
@@ -1804,7 +1804,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
   __pyx_t_3 = ((__pyx_v_fp2_only == NULL) != 0);
   if (__pyx_t_3) {
 
-    /* "filediffs.pyx":58
+    /* "filediffs/filediffs_cy.pyx":58
  *     fp2_only = fopen(outpath_lines_present_only_in_file2, "w")
  *     if fp2_only == NULL:
  *         perror("Error opening " + str(outpath_lines_present_only_in_file2) + " that contains lines present only in" +             # <<<<<<<<<<<<<<
@@ -1823,7 +1823,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "filediffs.pyx":59
+    /* "filediffs/filediffs_cy.pyx":59
  *     if fp2_only == NULL:
  *         perror("Error opening " + str(outpath_lines_present_only_in_file2) + " that contains lines present only in" +
  *                str(filename_2))             # <<<<<<<<<<<<<<
@@ -1836,7 +1836,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "filediffs.pyx":58
+    /* "filediffs/filediffs_cy.pyx":58
  *     fp2_only = fopen(outpath_lines_present_only_in_file2, "w")
  *     if fp2_only == NULL:
  *         perror("Error opening " + str(outpath_lines_present_only_in_file2) + " that contains lines present only in" +             # <<<<<<<<<<<<<<
@@ -1851,7 +1851,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     perror(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "filediffs.pyx":60
+    /* "filediffs/filediffs_cy.pyx":60
  *         perror("Error opening " + str(outpath_lines_present_only_in_file2) + " that contains lines present only in" +
  *                str(filename_2))
  *         return error_return             # <<<<<<<<<<<<<<
@@ -1865,7 +1865,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     __pyx_t_4 = 0;
     goto __pyx_L0;
 
-    /* "filediffs.pyx":57
+    /* "filediffs/filediffs_cy.pyx":57
  * 
  *     fp2_only = fopen(outpath_lines_present_only_in_file2, "w")
  *     if fp2_only == NULL:             # <<<<<<<<<<<<<<
@@ -1874,7 +1874,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   }
 
-  /* "filediffs.pyx":62
+  /* "filediffs/filediffs_cy.pyx":62
  *         return error_return
  * 
  *     cdef Py_ssize_t i = 0             # <<<<<<<<<<<<<<
@@ -1883,7 +1883,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   __pyx_v_i = 0;
 
-  /* "filediffs.pyx":63
+  /* "filediffs/filediffs_cy.pyx":63
  * 
  *     cdef Py_ssize_t i = 0
  *     cdef Py_ssize_t j = 0             # <<<<<<<<<<<<<<
@@ -1892,7 +1892,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   __pyx_v_j = 0;
 
-  /* "filediffs.pyx":64
+  /* "filediffs/filediffs_cy.pyx":64
  *     cdef Py_ssize_t i = 0
  *     cdef Py_ssize_t j = 0
  *     cdef Py_ssize_t m = 0             # <<<<<<<<<<<<<<
@@ -1901,7 +1901,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   __pyx_v_m = 0;
 
-  /* "filediffs.pyx":67
+  /* "filediffs/filediffs_cy.pyx":67
  * 
  *     # process first file
  *     while fgets(ln_str, 600, fp):             # <<<<<<<<<<<<<<
@@ -1912,7 +1912,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     __pyx_t_3 = (fgets(__pyx_v_ln_str, 0x258, __pyx_v_fp) != 0);
     if (!__pyx_t_3) break;
 
-    /* "filediffs.pyx":68
+    /* "filediffs/filediffs_cy.pyx":68
  *     # process first file
  *     while fgets(ln_str, 600, fp):
  *         i = i + 1             # <<<<<<<<<<<<<<
@@ -1921,7 +1921,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
     __pyx_v_i = (__pyx_v_i + 1);
 
-    /* "filediffs.pyx":69
+    /* "filediffs/filediffs_cy.pyx":69
  *     while fgets(ln_str, 600, fp):
  *         i = i + 1
  *         if ln_str not in comparer_dict:             # <<<<<<<<<<<<<<
@@ -1935,7 +1935,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     __pyx_t_7 = (__pyx_t_3 != 0);
     if (__pyx_t_7) {
 
-      /* "filediffs.pyx":70
+      /* "filediffs/filediffs_cy.pyx":70
  *         i = i + 1
  *         if ln_str not in comparer_dict:
  *             comparer_dict[ln_str] = 1             # <<<<<<<<<<<<<<
@@ -1947,7 +1947,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
       if (unlikely(PyDict_SetItem(__pyx_v_comparer_dict, __pyx_t_4, __pyx_int_1) < 0)) __PYX_ERR(0, 70, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "filediffs.pyx":69
+      /* "filediffs/filediffs_cy.pyx":69
  *     while fgets(ln_str, 600, fp):
  *         i = i + 1
  *         if ln_str not in comparer_dict:             # <<<<<<<<<<<<<<
@@ -1957,7 +1957,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
       goto __pyx_L10;
     }
 
-    /* "filediffs.pyx":72
+    /* "filediffs/filediffs_cy.pyx":72
  *             comparer_dict[ln_str] = 1
  *         else:
  *             comparer_dict[ln_str] = comparer_dict[ln_str] + 1             # <<<<<<<<<<<<<<
@@ -1981,7 +1981,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     }
     __pyx_L10:;
 
-    /* "filediffs.pyx":74
+    /* "filediffs/filediffs_cy.pyx":74
  *             comparer_dict[ln_str] = comparer_dict[ln_str] + 1
  *         # if 5.000.000 rows were processed, consolidate the dict using the first 5.000.000 rows of the 2nd file
  *         if (i % 5000000) == 0:             # <<<<<<<<<<<<<<
@@ -1991,7 +1991,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     __pyx_t_7 = ((__Pyx_mod_Py_ssize_t(__pyx_v_i, 0x4C4B40) == 0) != 0);
     if (__pyx_t_7) {
 
-      /* "filediffs.pyx":75
+      /* "filediffs/filediffs_cy.pyx":75
  *         # if 5.000.000 rows were processed, consolidate the dict using the first 5.000.000 rows of the 2nd file
  *         if (i % 5000000) == 0:
  *             while fgets(ln_str, 6000, fp2):             # <<<<<<<<<<<<<<
@@ -2002,7 +2002,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
         __pyx_t_7 = (fgets(__pyx_v_ln_str, 0x1770, __pyx_v_fp2) != 0);
         if (!__pyx_t_7) break;
 
-        /* "filediffs.pyx":76
+        /* "filediffs/filediffs_cy.pyx":76
  *         if (i % 5000000) == 0:
  *             while fgets(ln_str, 6000, fp2):
  *                 j = j + 1             # <<<<<<<<<<<<<<
@@ -2011,7 +2011,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
         __pyx_v_j = (__pyx_v_j + 1);
 
-        /* "filediffs.pyx":78
+        /* "filediffs/filediffs_cy.pyx":78
  *                 j = j + 1
  *                 # if we saw the line, write it to file and erase it from the dict
  *                 if ln_str in comparer_dict:             # <<<<<<<<<<<<<<
@@ -2025,7 +2025,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
         __pyx_t_3 = (__pyx_t_7 != 0);
         if (__pyx_t_3) {
 
-          /* "filediffs.pyx":79
+          /* "filediffs/filediffs_cy.pyx":79
  *                 # if we saw the line, write it to file and erase it from the dict
  *                 if ln_str in comparer_dict:
  *                     m = m + 1             # <<<<<<<<<<<<<<
@@ -2034,7 +2034,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
           __pyx_v_m = (__pyx_v_m + 1);
 
-          /* "filediffs.pyx":81
+          /* "filediffs/filediffs_cy.pyx":81
  *                     m = m + 1
  *                     # write to file
  *                     fprintf(fp_both, ln_str, m)             # <<<<<<<<<<<<<<
@@ -2043,7 +2043,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
           (void)(fprintf(__pyx_v_fp_both, __pyx_v_ln_str, __pyx_v_m));
 
-          /* "filediffs.pyx":82
+          /* "filediffs/filediffs_cy.pyx":82
  *                     # write to file
  *                     fprintf(fp_both, ln_str, m)
  *                     del comparer_dict[ln_str]             # <<<<<<<<<<<<<<
@@ -2055,7 +2055,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
           if (unlikely(PyDict_DelItem(__pyx_v_comparer_dict, __pyx_t_4) < 0)) __PYX_ERR(0, 82, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-          /* "filediffs.pyx":78
+          /* "filediffs/filediffs_cy.pyx":78
  *                 j = j + 1
  *                 # if we saw the line, write it to file and erase it from the dict
  *                 if ln_str in comparer_dict:             # <<<<<<<<<<<<<<
@@ -2065,7 +2065,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
           goto __pyx_L14;
         }
 
-        /* "filediffs.pyx":84
+        /* "filediffs/filediffs_cy.pyx":84
  *                     del comparer_dict[ln_str]
  *                 else:
  *                     comparer_dict[ln_str] = -1             # <<<<<<<<<<<<<<
@@ -2080,7 +2080,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
         }
         __pyx_L14:;
 
-        /* "filediffs.pyx":85
+        /* "filediffs/filediffs_cy.pyx":85
  *                 else:
  *                     comparer_dict[ln_str] = -1
  *                 if (j % 5000000) == 0:             # <<<<<<<<<<<<<<
@@ -2090,7 +2090,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
         __pyx_t_3 = ((__Pyx_mod_Py_ssize_t(__pyx_v_j, 0x4C4B40) == 0) != 0);
         if (__pyx_t_3) {
 
-          /* "filediffs.pyx":86
+          /* "filediffs/filediffs_cy.pyx":86
  *                     comparer_dict[ln_str] = -1
  *                 if (j % 5000000) == 0:
  *                     if verbose:             # <<<<<<<<<<<<<<
@@ -2100,7 +2100,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
           __pyx_t_3 = __Pyx_PyObject_IsTrue(((PyObject *)__pyx_v_verbose)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 86, __pyx_L1_error)
           if (__pyx_t_3) {
 
-            /* "filediffs.pyx":87
+            /* "filediffs/filediffs_cy.pyx":87
  *                 if (j % 5000000) == 0:
  *                     if verbose:
  *                         if (j % 25000000) == 0:             # <<<<<<<<<<<<<<
@@ -2110,7 +2110,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
             __pyx_t_3 = ((__Pyx_mod_Py_ssize_t(__pyx_v_j, 0x17D7840) == 0) != 0);
             if (__pyx_t_3) {
 
-              /* "filediffs.pyx":88
+              /* "filediffs/filediffs_cy.pyx":88
  *                     if verbose:
  *                         if (j % 25000000) == 0:
  *                             progress_report.append(bytes(str(j), "utf-8"))             # <<<<<<<<<<<<<<
@@ -2137,7 +2137,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
               (void)(__pyx_v_progress_report.append(__pyx_t_8));
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-              /* "filediffs.pyx":87
+              /* "filediffs/filediffs_cy.pyx":87
  *                 if (j % 5000000) == 0:
  *                     if verbose:
  *                         if (j % 25000000) == 0:             # <<<<<<<<<<<<<<
@@ -2146,7 +2146,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
             }
 
-            /* "filediffs.pyx":86
+            /* "filediffs/filediffs_cy.pyx":86
  *                     comparer_dict[ln_str] = -1
  *                 if (j % 5000000) == 0:
  *                     if verbose:             # <<<<<<<<<<<<<<
@@ -2155,7 +2155,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
           }
 
-          /* "filediffs.pyx":89
+          /* "filediffs/filediffs_cy.pyx":89
  *                         if (j % 25000000) == 0:
  *                             progress_report.append(bytes(str(j), "utf-8"))
  *                     break             # <<<<<<<<<<<<<<
@@ -2164,7 +2164,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
           goto __pyx_L13_break;
 
-          /* "filediffs.pyx":85
+          /* "filediffs/filediffs_cy.pyx":85
  *                 else:
  *                     comparer_dict[ln_str] = -1
  *                 if (j % 5000000) == 0:             # <<<<<<<<<<<<<<
@@ -2175,7 +2175,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
       }
       __pyx_L13_break:;
 
-      /* "filediffs.pyx":74
+      /* "filediffs/filediffs_cy.pyx":74
  *             comparer_dict[ln_str] = comparer_dict[ln_str] + 1
  *         # if 5.000.000 rows were processed, consolidate the dict using the first 5.000.000 rows of the 2nd file
  *         if (i % 5000000) == 0:             # <<<<<<<<<<<<<<
@@ -2185,7 +2185,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     }
   }
 
-  /* "filediffs.pyx":93
+  /* "filediffs/filediffs_cy.pyx":93
  *     # after the processing of all lines in file 1 ended, read the remaining lines of file 2
  *     else:
  *         while fgets(ln_str, 6000, fp2):             # <<<<<<<<<<<<<<
@@ -2197,7 +2197,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
       __pyx_t_3 = (fgets(__pyx_v_ln_str, 0x1770, __pyx_v_fp2) != 0);
       if (!__pyx_t_3) break;
 
-      /* "filediffs.pyx":94
+      /* "filediffs/filediffs_cy.pyx":94
  *     else:
  *         while fgets(ln_str, 6000, fp2):
  *             j = j + 1             # <<<<<<<<<<<<<<
@@ -2206,7 +2206,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
       __pyx_v_j = (__pyx_v_j + 1);
 
-      /* "filediffs.pyx":95
+      /* "filediffs/filediffs_cy.pyx":95
  *         while fgets(ln_str, 6000, fp2):
  *             j = j + 1
  *             if ln_str in comparer_dict:             # <<<<<<<<<<<<<<
@@ -2220,7 +2220,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
       __pyx_t_7 = (__pyx_t_3 != 0);
       if (__pyx_t_7) {
 
-        /* "filediffs.pyx":96
+        /* "filediffs/filediffs_cy.pyx":96
  *             j = j + 1
  *             if ln_str in comparer_dict:
  *                 m = m + 1             # <<<<<<<<<<<<<<
@@ -2229,7 +2229,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
         __pyx_v_m = (__pyx_v_m + 1);
 
-        /* "filediffs.pyx":97
+        /* "filediffs/filediffs_cy.pyx":97
  *             if ln_str in comparer_dict:
  *                 m = m + 1
  *                 fprintf(fp_both, ln_str, m)             # <<<<<<<<<<<<<<
@@ -2238,7 +2238,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
         (void)(fprintf(__pyx_v_fp_both, __pyx_v_ln_str, __pyx_v_m));
 
-        /* "filediffs.pyx":98
+        /* "filediffs/filediffs_cy.pyx":98
  *                 m = m + 1
  *                 fprintf(fp_both, ln_str, m)
  *                 del comparer_dict[ln_str]             # <<<<<<<<<<<<<<
@@ -2250,7 +2250,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
         if (unlikely(PyDict_DelItem(__pyx_v_comparer_dict, __pyx_t_1) < 0)) __PYX_ERR(0, 98, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "filediffs.pyx":95
+        /* "filediffs/filediffs_cy.pyx":95
  *         while fgets(ln_str, 6000, fp2):
  *             j = j + 1
  *             if ln_str in comparer_dict:             # <<<<<<<<<<<<<<
@@ -2260,7 +2260,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
         goto __pyx_L20;
       }
 
-      /* "filediffs.pyx":100
+      /* "filediffs/filediffs_cy.pyx":100
  *                 del comparer_dict[ln_str]
  *             else:
  *                 comparer_dict[ln_str] = -1             # <<<<<<<<<<<<<<
@@ -2277,7 +2277,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     }
   }
 
-  /* "filediffs.pyx":103
+  /* "filediffs/filediffs_cy.pyx":103
  * 
  *     # closing file connections
  *     fclose(fp)             # <<<<<<<<<<<<<<
@@ -2286,7 +2286,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   (void)(fclose(__pyx_v_fp));
 
-  /* "filediffs.pyx":104
+  /* "filediffs/filediffs_cy.pyx":104
  *     # closing file connections
  *     fclose(fp)
  *     fclose(fp2)             # <<<<<<<<<<<<<<
@@ -2295,7 +2295,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   (void)(fclose(__pyx_v_fp2));
 
-  /* "filediffs.pyx":105
+  /* "filediffs/filediffs_cy.pyx":105
  *     fclose(fp)
  *     fclose(fp2)
  *     fclose(fp_both)             # <<<<<<<<<<<<<<
@@ -2304,7 +2304,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   (void)(fclose(__pyx_v_fp_both));
 
-  /* "filediffs.pyx":108
+  /* "filediffs/filediffs_cy.pyx":108
  * 
  *     # split dict into lines only in file 1 and only in file 2
  *     lines_only_in_file_1 = []             # <<<<<<<<<<<<<<
@@ -2316,7 +2316,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
   __pyx_v_lines_only_in_file_1 = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "filediffs.pyx":109
+  /* "filediffs/filediffs_cy.pyx":109
  *     # split dict into lines only in file 1 and only in file 2
  *     lines_only_in_file_1 = []
  *     lines_only_in_file_2 = []             # <<<<<<<<<<<<<<
@@ -2328,7 +2328,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
   __pyx_v_lines_only_in_file_2 = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "filediffs.pyx":110
+  /* "filediffs/filediffs_cy.pyx":110
  *     lines_only_in_file_1 = []
  *     lines_only_in_file_2 = []
  *     cdef Py_ssize_t n = 0             # <<<<<<<<<<<<<<
@@ -2337,7 +2337,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   __pyx_v_n = 0;
 
-  /* "filediffs.pyx":111
+  /* "filediffs/filediffs_cy.pyx":111
  *     lines_only_in_file_2 = []
  *     cdef Py_ssize_t n = 0
  *     cdef Py_ssize_t o = 0             # <<<<<<<<<<<<<<
@@ -2346,7 +2346,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   __pyx_v_o = 0;
 
-  /* "filediffs.pyx":113
+  /* "filediffs/filediffs_cy.pyx":113
  *     cdef Py_ssize_t o = 0
  * 
  *     for k, v in comparer_dict.items():             # <<<<<<<<<<<<<<
@@ -2448,7 +2448,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     __pyx_t_6 = 0;
     __pyx_v_v = __pyx_t_14;
 
-    /* "filediffs.pyx":114
+    /* "filediffs/filediffs_cy.pyx":114
  * 
  *     for k, v in comparer_dict.items():
  *         if v > 0:             # <<<<<<<<<<<<<<
@@ -2458,7 +2458,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     __pyx_t_7 = ((__pyx_v_v > 0) != 0);
     if (__pyx_t_7) {
 
-      /* "filediffs.pyx":115
+      /* "filediffs/filediffs_cy.pyx":115
  *     for k, v in comparer_dict.items():
  *         if v > 0:
  *             n = n + 1             # <<<<<<<<<<<<<<
@@ -2467,7 +2467,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
       __pyx_v_n = (__pyx_v_n + 1);
 
-      /* "filediffs.pyx":116
+      /* "filediffs/filediffs_cy.pyx":116
  *         if v > 0:
  *             n = n + 1
  *             fprintf(fp1_only, k, n)             # <<<<<<<<<<<<<<
@@ -2481,7 +2481,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
       __pyx_t_15 = __Pyx_PyBytes_AsString(__pyx_v_k); if (unlikely((!__pyx_t_15) && PyErr_Occurred())) __PYX_ERR(0, 116, __pyx_L1_error)
       (void)(fprintf(__pyx_v_fp1_only, __pyx_t_15, __pyx_v_n));
 
-      /* "filediffs.pyx":117
+      /* "filediffs/filediffs_cy.pyx":117
  *             n = n + 1
  *             fprintf(fp1_only, k, n)
  *             lines_only_in_file_1.append(k)             # <<<<<<<<<<<<<<
@@ -2490,7 +2490,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
       __pyx_t_16 = __Pyx_PyList_Append(__pyx_v_lines_only_in_file_1, __pyx_v_k); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(0, 117, __pyx_L1_error)
 
-      /* "filediffs.pyx":114
+      /* "filediffs/filediffs_cy.pyx":114
  * 
  *     for k, v in comparer_dict.items():
  *         if v > 0:             # <<<<<<<<<<<<<<
@@ -2500,7 +2500,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
       goto __pyx_L25;
     }
 
-    /* "filediffs.pyx":119
+    /* "filediffs/filediffs_cy.pyx":119
  *             lines_only_in_file_1.append(k)
  *         else:
  *             o = o + 1             # <<<<<<<<<<<<<<
@@ -2510,7 +2510,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     /*else*/ {
       __pyx_v_o = (__pyx_v_o + 1);
 
-      /* "filediffs.pyx":120
+      /* "filediffs/filediffs_cy.pyx":120
  *         else:
  *             o = o + 1
  *             fprintf(fp2_only, k, o)             # <<<<<<<<<<<<<<
@@ -2524,7 +2524,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
       __pyx_t_15 = __Pyx_PyBytes_AsString(__pyx_v_k); if (unlikely((!__pyx_t_15) && PyErr_Occurred())) __PYX_ERR(0, 120, __pyx_L1_error)
       (void)(fprintf(__pyx_v_fp2_only, __pyx_t_15, __pyx_v_o));
 
-      /* "filediffs.pyx":121
+      /* "filediffs/filediffs_cy.pyx":121
  *             o = o + 1
  *             fprintf(fp2_only, k, o)
  *             lines_only_in_file_2.append(k)             # <<<<<<<<<<<<<<
@@ -2535,7 +2535,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     }
     __pyx_L25:;
 
-    /* "filediffs.pyx":113
+    /* "filediffs/filediffs_cy.pyx":113
  *     cdef Py_ssize_t o = 0
  * 
  *     for k, v in comparer_dict.items():             # <<<<<<<<<<<<<<
@@ -2545,7 +2545,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "filediffs.pyx":122
+  /* "filediffs/filediffs_cy.pyx":122
  *             fprintf(fp2_only, k, o)
  *             lines_only_in_file_2.append(k)
  *     fclose(fp1_only)             # <<<<<<<<<<<<<<
@@ -2554,7 +2554,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   (void)(fclose(__pyx_v_fp1_only));
 
-  /* "filediffs.pyx":123
+  /* "filediffs/filediffs_cy.pyx":123
  *             lines_only_in_file_2.append(k)
  *     fclose(fp1_only)
  *     fclose(fp2_only)             # <<<<<<<<<<<<<<
@@ -2563,7 +2563,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   (void)(fclose(__pyx_v_fp2_only));
 
-  /* "filediffs.pyx":124
+  /* "filediffs/filediffs_cy.pyx":124
  *     fclose(fp1_only)
  *     fclose(fp2_only)
  *     if verbose:             # <<<<<<<<<<<<<<
@@ -2573,7 +2573,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
   __pyx_t_7 = __Pyx_PyObject_IsTrue(((PyObject *)__pyx_v_verbose)); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 124, __pyx_L1_error)
   if (__pyx_t_7) {
 
-    /* "filediffs.pyx":125
+    /* "filediffs/filediffs_cy.pyx":125
  *     fclose(fp2_only)
  *     if verbose:
  *         pystring1 = "Saved lines present in both files to: " + str(outpath_lines_present_in_both_files) + "\n"             # <<<<<<<<<<<<<<
@@ -2594,7 +2594,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     __pyx_v_pystring1 = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "filediffs.pyx":126
+    /* "filediffs/filediffs_cy.pyx":126
  *     if verbose:
  *         pystring1 = "Saved lines present in both files to: " + str(outpath_lines_present_in_both_files) + "\n"
  *         print(pystring1)             # <<<<<<<<<<<<<<
@@ -2603,7 +2603,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
     if (__Pyx_PrintOne(0, __pyx_v_pystring1) < 0) __PYX_ERR(0, 126, __pyx_L1_error)
 
-    /* "filediffs.pyx":127
+    /* "filediffs/filediffs_cy.pyx":127
  *         pystring1 = "Saved lines present in both files to: " + str(outpath_lines_present_in_both_files) + "\n"
  *         print(pystring1)
  *         pystring2 = "Saved lines present in file 1 only to: " + str(outpath_lines_present_only_in_file1) + "\n"             # <<<<<<<<<<<<<<
@@ -2624,7 +2624,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     __pyx_v_pystring2 = __pyx_t_4;
     __pyx_t_4 = 0;
 
-    /* "filediffs.pyx":128
+    /* "filediffs/filediffs_cy.pyx":128
  *         print(pystring1)
  *         pystring2 = "Saved lines present in file 1 only to: " + str(outpath_lines_present_only_in_file1) + "\n"
  *         print(pystring2)             # <<<<<<<<<<<<<<
@@ -2633,7 +2633,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
     if (__Pyx_PrintOne(0, __pyx_v_pystring2) < 0) __PYX_ERR(0, 128, __pyx_L1_error)
 
-    /* "filediffs.pyx":129
+    /* "filediffs/filediffs_cy.pyx":129
  *         pystring2 = "Saved lines present in file 1 only to: " + str(outpath_lines_present_only_in_file1) + "\n"
  *         print(pystring2)
  *         pystring3 = "Saved lines present in file 2 only to: " + str(outpath_lines_present_only_in_file2) + "\n"             # <<<<<<<<<<<<<<
@@ -2654,7 +2654,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
     __pyx_v_pystring3 = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "filediffs.pyx":130
+    /* "filediffs/filediffs_cy.pyx":130
  *         print(pystring2)
  *         pystring3 = "Saved lines present in file 2 only to: " + str(outpath_lines_present_only_in_file2) + "\n"
  *         print(pystring3)             # <<<<<<<<<<<<<<
@@ -2663,7 +2663,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
     if (__Pyx_PrintOne(0, __pyx_v_pystring3) < 0) __PYX_ERR(0, 130, __pyx_L1_error)
 
-    /* "filediffs.pyx":124
+    /* "filediffs/filediffs_cy.pyx":124
  *     fclose(fp1_only)
  *     fclose(fp2_only)
  *     if verbose:             # <<<<<<<<<<<<<<
@@ -2672,7 +2672,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
  */
   }
 
-  /* "filediffs.pyx":132
+  /* "filediffs/filediffs_cy.pyx":132
  *         print(pystring3)
  * 
  *     return lines_only_in_file_1, lines_only_in_file_2             # <<<<<<<<<<<<<<
@@ -2690,10 +2690,10 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "filediffs.pyx":18
+  /* "filediffs/filediffs_cy.pyx":18
  * from cpython cimport bool
  * 
- * cpdef file_diffs(char*filename_1,             # <<<<<<<<<<<<<<
+ * cpdef file_diffs_cy(char*filename_1,             # <<<<<<<<<<<<<<
  *                  char*filename_2,
  *                  char*outpath_lines_present_in_both_files="lines_present_in_both_files.txt",
  */
@@ -2705,7 +2705,7 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_11);
   __Pyx_XDECREF(__pyx_t_12);
-  __Pyx_AddTraceback("filediffs.file_diffs", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("filediffs.file_diffs_cy", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_comparer_dict);
@@ -2721,8 +2721,8 @@ static PyObject *__pyx_f_9filediffs_file_diffs(char *__pyx_v_filename_1, char *_
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9filediffs_1file_diffs(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_9filediffs_1file_diffs(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_9filediffs_1file_diffs_cy(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_9filediffs_1file_diffs_cy(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   char *__pyx_v_filename_1;
   char *__pyx_v_filename_2;
   char *__pyx_v_outpath_lines_present_in_both_files;
@@ -2734,14 +2734,14 @@ static PyObject *__pyx_pw_9filediffs_1file_diffs(PyObject *__pyx_self, PyObject 
   int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("file_diffs (wrapper)", 0);
+  __Pyx_RefNannySetupContext("file_diffs_cy (wrapper)", 0);
   {
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_filename_1,&__pyx_n_s_filename_2,&__pyx_n_s_outpath_lines_present_in_both_fi,&__pyx_n_s_outpath_lines_present_only_in_fi,&__pyx_n_s_outpath_lines_present_only_in_fi_2,&__pyx_n_s_verbose,0};
     PyObject* values[6] = {0,0,0,0,0,0};
 
-    /* "filediffs.pyx":23
- *                  char*outpath_lines_present_only_in_file1="outpath_lines_present_only_in_file1.txt",
- *                  char*outpath_lines_present_only_in_file2="outpath_lines_present_only_in_file2.txt",
+    /* "filediffs/filediffs_cy.pyx":23
+ *                  char*outpath_lines_present_only_in_file1="lines_present_only_in_file1.txt",
+ *                  char*outpath_lines_present_only_in_file2="lines_present_only_in_file2.txt",
  *                  bool verbose=True):             # <<<<<<<<<<<<<<
  *     cdef FILE *fp
  *     cdef FILE *fp2
@@ -2775,7 +2775,7 @@ static PyObject *__pyx_pw_9filediffs_1file_diffs(PyObject *__pyx_self, PyObject 
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_filename_2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("file_diffs", 0, 2, 6, 1); __PYX_ERR(0, 18, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("file_diffs_cy", 0, 2, 6, 1); __PYX_ERR(0, 18, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -2803,7 +2803,7 @@ static PyObject *__pyx_pw_9filediffs_1file_diffs(PyObject *__pyx_self, PyObject 
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "file_diffs") < 0)) __PYX_ERR(0, 18, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "file_diffs_cy") < 0)) __PYX_ERR(0, 18, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -2831,30 +2831,30 @@ static PyObject *__pyx_pw_9filediffs_1file_diffs(PyObject *__pyx_self, PyObject 
     if (values[3]) {
       __pyx_v_outpath_lines_present_only_in_file1 = __Pyx_PyObject_AsWritableString(values[3]); if (unlikely((!__pyx_v_outpath_lines_present_only_in_file1) && PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L3_error)
     } else {
-      __pyx_v_outpath_lines_present_only_in_file1 = ((char *)((char *)"outpath_lines_present_only_in_file1.txt"));
+      __pyx_v_outpath_lines_present_only_in_file1 = ((char *)((char *)"lines_present_only_in_file1.txt"));
     }
     if (values[4]) {
       __pyx_v_outpath_lines_present_only_in_file2 = __Pyx_PyObject_AsWritableString(values[4]); if (unlikely((!__pyx_v_outpath_lines_present_only_in_file2) && PyErr_Occurred())) __PYX_ERR(0, 22, __pyx_L3_error)
     } else {
-      __pyx_v_outpath_lines_present_only_in_file2 = ((char *)((char *)"outpath_lines_present_only_in_file2.txt"));
+      __pyx_v_outpath_lines_present_only_in_file2 = ((char *)((char *)"lines_present_only_in_file2.txt"));
     }
     __pyx_v_verbose = ((PyBoolObject *)values[5]);
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("file_diffs", 0, 2, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 18, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("file_diffs_cy", 0, 2, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 18, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("filediffs.file_diffs", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("filediffs.file_diffs_cy", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_verbose), __pyx_ptype_7cpython_4bool_bool, 1, "verbose", 0))) __PYX_ERR(0, 23, __pyx_L1_error)
-  __pyx_r = __pyx_pf_9filediffs_file_diffs(__pyx_self, __pyx_v_filename_1, __pyx_v_filename_2, __pyx_v_outpath_lines_present_in_both_files, __pyx_v_outpath_lines_present_only_in_file1, __pyx_v_outpath_lines_present_only_in_file2, __pyx_v_verbose);
+  __pyx_r = __pyx_pf_9filediffs_file_diffs_cy(__pyx_self, __pyx_v_filename_1, __pyx_v_filename_2, __pyx_v_outpath_lines_present_in_both_files, __pyx_v_outpath_lines_present_only_in_file1, __pyx_v_outpath_lines_present_only_in_file2, __pyx_v_verbose);
 
-  /* "filediffs.pyx":18
+  /* "filediffs/filediffs_cy.pyx":18
  * from cpython cimport bool
  * 
- * cpdef file_diffs(char*filename_1,             # <<<<<<<<<<<<<<
+ * cpdef file_diffs_cy(char*filename_1,             # <<<<<<<<<<<<<<
  *                  char*filename_2,
  *                  char*outpath_lines_present_in_both_files="lines_present_in_both_files.txt",
  */
@@ -2868,22 +2868,22 @@ static PyObject *__pyx_pw_9filediffs_1file_diffs(PyObject *__pyx_self, PyObject 
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_9filediffs_file_diffs(CYTHON_UNUSED PyObject *__pyx_self, char *__pyx_v_filename_1, char *__pyx_v_filename_2, char *__pyx_v_outpath_lines_present_in_both_files, char *__pyx_v_outpath_lines_present_only_in_file1, char *__pyx_v_outpath_lines_present_only_in_file2, PyBoolObject *__pyx_v_verbose) {
+static PyObject *__pyx_pf_9filediffs_file_diffs_cy(CYTHON_UNUSED PyObject *__pyx_self, char *__pyx_v_filename_1, char *__pyx_v_filename_2, char *__pyx_v_outpath_lines_present_in_both_files, char *__pyx_v_outpath_lines_present_only_in_file1, char *__pyx_v_outpath_lines_present_only_in_file2, PyBoolObject *__pyx_v_verbose) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  struct __pyx_opt_args_9filediffs_file_diffs __pyx_t_2;
+  struct __pyx_opt_args_9filediffs_file_diffs_cy __pyx_t_2;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("file_diffs", 0);
+  __Pyx_RefNannySetupContext("file_diffs_cy", 0);
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 4;
   __pyx_t_2.outpath_lines_present_in_both_files = __pyx_v_outpath_lines_present_in_both_files;
   __pyx_t_2.outpath_lines_present_only_in_file1 = __pyx_v_outpath_lines_present_only_in_file1;
   __pyx_t_2.outpath_lines_present_only_in_file2 = __pyx_v_outpath_lines_present_only_in_file2;
   __pyx_t_2.verbose = __pyx_v_verbose;
-  __pyx_t_1 = __pyx_f_9filediffs_file_diffs(__pyx_v_filename_1, __pyx_v_filename_2, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9filediffs_file_diffs_cy(__pyx_v_filename_1, __pyx_v_filename_2, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -2892,7 +2892,7 @@ static PyObject *__pyx_pf_9filediffs_file_diffs(CYTHON_UNUSED PyObject *__pyx_se
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("filediffs.file_diffs", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("filediffs.file_diffs_cy", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2966,7 +2966,7 @@ static std::string __pyx_convert_string_from_py_std__in_string(PyObject *__pyx_v
 }
 
 static PyMethodDef __pyx_methods[] = {
-  {"file_diffs", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_9filediffs_1file_diffs, METH_VARARGS|METH_KEYWORDS, 0},
+  {"file_diffs_cy", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_9filediffs_1file_diffs_cy, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
@@ -3353,7 +3353,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "filediffs.pyx":1
+  /* "filediffs/filediffs_cy.pyx":1
  * # distutils: language=c++             # <<<<<<<<<<<<<<
  * 
  * """

@@ -15,7 +15,7 @@ from libc.stdio cimport FILE, fopen, fprintf, fclose, perror, fgets
 from libcpp.string cimport string
 from cpython cimport bool
 
-cpdef file_diffs(char*filename_1,
+cpdef file_diffs_cy(char*filename_1,
                  char*filename_2,
                  char*outpath_lines_present_in_both_files="lines_present_in_both_files.txt",
                  char*outpath_lines_present_only_in_file1="lines_present_only_in_file1.txt",

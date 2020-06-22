@@ -5,7 +5,7 @@ from Cython.Build import cythonize
 
 setup(
     ext_modules=cythonize(
-        [str(Path(__file__).parent / 'filediffs' / 'filediffs.pyx')],
+        [str(Path(__file__).parent / 'filediffs' / 'filediffs_cy.pyx')],
         annotate=False,
         language_level=3),
 )

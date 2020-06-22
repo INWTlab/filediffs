@@ -1,13 +1,15 @@
 from pathlib import Path
+from time import time
 
 from filediffs.filediffs import file_diffs
 
 
 def test_file_diffs_are_created():
     # arrange
-    fp1 = bytes(str(Path(__file__).parent / "data" / "file_1.txt"), "utf-8")
-    fp2 = bytes(str(Path(__file__).parent / "data" / "file_2.txt"), "utf-8")
+    fp1 = str(Path(__file__).parent / "data" / "file_1.txt")
+    fp2 = str(Path(__file__).parent / "data" / "file_2.txt")
 
+    # outfile path for cleanup
     outfile_p_both = Path(__file__).parent / "lines_present_in_both_files.txt"
     outfile_p_1 = Path(__file__).parent / "lines_present_only_in_file1.txt"
     outfile_p_2 = Path(__file__).parent / "lines_present_only_in_file2.txt"
@@ -95,9 +97,8 @@ def test_file_diffs_are_created():
 
 def test_file_diffs_python_output():
     # arrange
-    # __file__ = 'filediffs/tests/test_comparefiles.py'
-    fp1 = bytes(str(Path(__file__).parent / "data" / "file_1.txt"), "utf-8")
-    fp2 = bytes(str(Path(__file__).parent / "data" / "file_2.txt"), "utf-8")
+    fp1 = str(Path(__file__).parent / "data" / "file_1.txt")
+    fp2 = str(Path(__file__).parent / "data" / "file_2.txt")
 
     # outfile path for cleanup
     outfile_p_both = Path(__file__).parent / "lines_present_in_both_files.txt"
@@ -152,13 +153,13 @@ def test_file_diffs_python_output():
 
 def test_file_diffs_performance():
     # arrange
-    fp1 = bytes(str(Path(__file__).parent / "data" / "file_1.txt"), "utf-8")
-    fp2 = bytes(str(Path(__file__).parent / "data" / "file_2.txt"), "utf-8")
+    fp1 = str(Path(__file__).parent / "data" / "file_1.txt")
+    fp2 = str(Path(__file__).parent / "data" / "file_2.txt")
 
+    # outfile path for cleanup
     outfile_p_both = Path(__file__).parent / "lines_present_in_both_files.txt"
     outfile_p_1 = Path(__file__).parent / "lines_present_only_in_file1.txt"
     outfile_p_2 = Path(__file__).parent / "lines_present_only_in_file2.txt"
-    from time import time
 
     # act
     start = time()
