@@ -17,9 +17,9 @@ def test_file_diffs_are_created():
     # act
     lines_only_in_file_1, lines_only_in_file_2 = file_diffs(
         filename_1=fp1, filename_2=fp2,
-        outpath_lines_present_in_both_files=bytes(outfile_p_both),
-        outpath_lines_present_only_in_file1=bytes(outfile_p_1),
-        outpath_lines_present_only_in_file2=bytes(outfile_p_2)
+        outpath_lines_present_in_both_files=str(outfile_p_both),
+        outpath_lines_present_only_in_file1=str(outfile_p_1),
+        outpath_lines_present_only_in_file2=str(outfile_p_2)
     )
 
     # assert
@@ -107,9 +107,9 @@ def test_file_diffs_python_output():
 
     # act
     lines_only_in_file_1, lines_only_in_file_2 = file_diffs(filename_1=fp1, filename_2=fp2,
-                                                            outpath_lines_present_in_both_files=bytes(outfile_p_both),
-                                                            outpath_lines_present_only_in_file1=bytes(outfile_p_1),
-                                                            outpath_lines_present_only_in_file2=bytes(outfile_p_2)
+                                                            outpath_lines_present_in_both_files=str(outfile_p_both),
+                                                            outpath_lines_present_only_in_file1=str(outfile_p_1),
+                                                            outpath_lines_present_only_in_file2=str(outfile_p_2)
                                                             )
 
     assert lines_only_in_file_1 == [
@@ -167,10 +167,9 @@ def test_file_diffs_performance():
     for i in range(0, 10000):
         start_loop = time()
         lines_only_in_file_1, lines_only_in_file_2 = file_diffs(filename_1=fp1, filename_2=fp2,
-                                                                outpath_lines_present_in_both_files=bytes(
-                                                                    outfile_p_both),
-                                                                outpath_lines_present_only_in_file1=bytes(outfile_p_1),
-                                                                outpath_lines_present_only_in_file2=bytes(outfile_p_2),
+                                                                outpath_lines_present_in_both_files=str(outfile_p_both),
+                                                                outpath_lines_present_only_in_file1=str(outfile_p_1),
+                                                                outpath_lines_present_only_in_file2=str(outfile_p_2),
                                                                 verbose=False
                                                                 )
         runtime_avg.append(time() - start_loop)
