@@ -1,4 +1,6 @@
 # The `filediffs` package
+[![Build Status](https://travis-ci.org/INWTlab/filediffs.svg?branch=master)](https://travis-ci.org/INWTlab/filediffs)
+company
 `filediffs` takes two files and separates them into 
 1. lines found in both files
 2. lines found only in file 1
