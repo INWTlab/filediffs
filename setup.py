@@ -47,7 +47,8 @@ setup(
     url='https://github.com/INWTlab/filediffs',
     packages=find_packages(),
     ext_modules=cythonize(Extension("filediffs",
-                                    get_ext_paths('filediffs', EXCLUDE_FILES))
+                                    get_ext_paths('filediffs', EXCLUDE_FILES)),
+                          compiler_directives={'language_level': 3}
                           ),
     cmdclass={'build_py': build_py},
     scripts=['bin/filediffs'],
