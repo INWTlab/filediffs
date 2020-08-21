@@ -34,7 +34,9 @@ for PYBIN in /opt/python/*/bin/; do
     "${PYBIN}/pip" install filediffs --no-index -f /io/wheelhouse
     "${PYBIN}/pip" install pytest
     "${PYBIN}/pip" install pytest-cython
-    (cd "$HOME"; ls; "${PYBIN}/pytest" filediffs/tests/test_filediffs.py --doctest-cython -v)
+    cd /io/
+    ls
+    ("${PYBIN}/pytest" filediffs/tests/test_filediffs.py --doctest-cython -v)
 done
 
 # publish
