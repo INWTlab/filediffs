@@ -19,7 +19,7 @@ matrix:
       install:
         - pip install pipenv
         - pipenv install --dev --skip-lock
-        - pipenv run python build_cython_setup.py build_ext --inplace
+        - pipenv run python setup.py build_ext --inplace
         - pipenv install -e . --skip-lock
       # command to run tests
       script:
@@ -35,7 +35,7 @@ matrix:
       install:
         - pip install pipenv
         - pipenv install --dev --skip-lock
-        - pipenv run python build_cython_setup.py build_ext --inplace
+        - pipenv run python setup.py build_ext --inplace
         - pipenv install -e . --skip-lock
       # command to run tests
       script:
@@ -51,12 +51,13 @@ matrix:
       install:
         - pip install pipenv
         - pipenv install --dev --skip-lock
-        - pipenv run python build_cython_setup.py build_ext --inplace
+        - pipenv run python setup.py build_ext --inplace
         - pipenv install -e . --skip-lock
       # command to run tests
       script:
         - pipenv run pytest filediffs/tests/test_filediffs.py --doctest-cython -v
     - sudo: required
+      # build wheels using manylinux
       stage: deploy
       services:
         - docker

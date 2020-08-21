@@ -7,7 +7,7 @@
         "language": "c++",
         "name": "filediffs",
         "sources": [
-            "filediffs/filediffs_cy.pyx"
+            "filediffs\\filediffs_cy.pyx"
         ]
     },
     "module_name": "filediffs"
@@ -845,7 +845,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "filediffs/filediffs_cy.pyx",
+  "filediffs\\filediffs_cy.pyx",
   "stringsource",
   "type.pxd",
   "bool.pxd",

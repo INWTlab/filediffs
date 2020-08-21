@@ -1,8 +1,32 @@
+# coding: utf-8
 import os
 
 from Cython.Build import cythonize
-from Cython.Distutils.build_ext import new_build_ext
-from setuptools import Extension, setup
+from setuptools import setup, find_packages, Extension
+from setuptools.command.build_py import build_py
+
+EXCLUDE_FILES = [os.path.join('filediffs', 'filediffs.py'),
+                 os.path.join('filediffs', '__init__.py'),
+                 os.path.join('filediffs', 'filediffs_script.py'),
+                 os.path.join('filediffs', 'tests', '__init__.py'),
+                 os.path.join('filediffs', 'tests', 'test_filediffs.py')]
+
+
+def get_ext_paths(root_dir, exclude_files):
+    """get filepaths for compilation"""
+    paths = []
+
+    for root, dirs, files in os.walk(root_dir):
+        for filename in files:
+            if os.path.splitext(filename)[1] != '.pyx':
+                continue
+
+            file_path = os.path.join(root, filename)
+            if file_path in exclude_files:
+                continue
+
+            paths.append(file_path)
+    return paths
 
 
 def read(f):
@@ -12,7 +36,7 @@ def read(f):
 
 setup(
     name='filediffs',
-    version='0.1.4',
+    version='0.1.5',
     include_package_data=True,
     description="Separate two files into three files, each containing "
                 "lines observed in both files/first file only/second file only. Programmed using Cython.",
@@ -21,22 +45,15 @@ setup(
     author_email='sebastian.cattes@inwt-statistics.de',
     long_description_content_type="text/markdown",
     url='https://github.com/INWTlab/filediffs',
-    package_data={'filediffs': [os.path.join(os.path.dirname(__file__), 'filediffs', "filediffs_cy.pyx"),
-                                os.path.join(os.path.dirname(__file__), 'filediffs', "filediffs.py"),
-                                os.path.join(os.path.dirname(__file__), 'filediffs', "filediffs_script.py")]},
-    extensions=[Extension("filediffs",
-                          [os.path.join(os.path.dirname(__file__), 'filediffs', "filediffs_cy.pyx")])
-                ],
+    packages=find_packages(),
     ext_modules=cythonize(Extension("filediffs",
-                                    [os.path.join(os.path.dirname(__file__), 'filediffs', "filediffs_cy.pyx")])
+                                    get_ext_paths('filediffs', EXCLUDE_FILES))
                           ),
-    cmdclass={'build_ext': new_build_ext},
-    entry_points={
-        'console_scripts': ['filediffs=filediffs.filediffs_script:main'],
-    },
+    cmdclass={'build_py': build_py},
+    scripts=['bin/filediffs'],
     requires=['cython'],
     license='MIT',
-    classifiers=(
+    classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'Natural Language :: English',
@@ -47,5 +64,5 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.8',
-    ),
+    ],
 )
