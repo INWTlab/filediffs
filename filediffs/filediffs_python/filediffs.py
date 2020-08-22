@@ -8,6 +8,7 @@ def file_diffs(filename_1,
                outpath_lines_present_only_in_file2="lines_present_only_in_file2.txt",
                verbose=True):
     # call cython function
+    verbose = int(verbose)
     lines_only_in_file_1, lines_only_in_file_2 = file_diffs_cy(
         filename_1=bytes(filename_1, "utf-8"), filename_2=bytes(filename_2, "utf-8"),
         outpath_lines_present_in_both_files=bytes(outpath_lines_present_in_both_files, "utf-8"),
