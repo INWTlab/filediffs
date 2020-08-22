@@ -41,6 +41,7 @@ for PYBIN in /opt/python/*/bin/; do
     ls -al ${PYBIN}
     # set up pipenv environment
     # spawn pipenv shell
+    cd /io/
     echo PYBIN=${PYBIN} >.env
     "${PYBIN}/pipenv" shell --python $PYBIN/python
     # install dependencies
