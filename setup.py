@@ -41,7 +41,7 @@ def read(f):
 
 setup(
     name='filediffs',
-    version='0.1.4',
+    version='0.1.5',
     include_package_data=True,
     description="Separate two files into three files, each containing "
                 "lines observed in both files/first file only/second file only. Programmed using Cython.",
