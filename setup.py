@@ -37,6 +37,7 @@ extNames = scandir('filediffs')
 
 extensions = [makeExtension(name) for name in extNames]
 
+
 def read(f):
     """Open a file"""
     return open(f, encoding='utf-8').read()
@@ -53,9 +54,13 @@ setup(
     author_email='sebastian.cattes@inwt-statistics.de',
     long_description_content_type="text/markdown",
     url='https://github.com/INWTlab/filediffs',
-    package_data={'filediffs': [os.path.join(dp, f) for dp, dn, fn in os.walk(os.path.expanduser("filediffs")) for f in fn]},
+    package_data={
+        'filediffs': [os.path.join(dp, f) for dp, dn, fn in os.walk(os.path.expanduser("filediffs")) for f in fn]
+    },
     extensions=extensions,
-    ext_modules=cythonize(extensions),
+    ext_modules=cythonize(extensions,
+                          annotate=False,
+                          language_level=3),
     cmdclass={'build_ext': new_build_ext},
     scripts=['bin/filediffs'],
     requires=['cython'],

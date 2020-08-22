@@ -46,11 +46,11 @@ for PYBIN in /opt/python/*/bin/; do
     # install dependencies
     "${PYBIN}/pipenv" install --dev --skip-lock  --python $PYBIN/python
     # build cython extensions
-    "${PYBIN}/pipenv" run python setup.py build_ext --inplace  --python $PYBIN/python
+    "${PYBIN}/pipenv" run python setup.py build_ext --inplace
     # install filediffs package
-    "${PYBIN}/pipenv" install -e . --skip-lock  --python $PYBIN/python
+    "${PYBIN}/pipenv" install -e . --skip-lock
     # run pytest
-    "${PYBIN}/pipenv" run pytest filediffs/tests/test_filediffs.py --doctest-cython -v  --python $PYBIN/python
+    "${PYBIN}/pipenv" run pytest filediffs/tests/test_filediffs.py --doctest-cython -v
     # clean up environment
     "${PYBIN}/pipenv" --rm
 
