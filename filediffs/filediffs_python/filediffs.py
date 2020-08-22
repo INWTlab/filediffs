@@ -14,7 +14,7 @@ def file_diffs(filename_1,
         outpath_lines_present_in_both_files=bytes(outpath_lines_present_in_both_files, "utf-8"),
         outpath_lines_present_only_in_file1=bytes(outpath_lines_present_only_in_file1, "utf-8"),
         outpath_lines_present_only_in_file2=bytes(outpath_lines_present_only_in_file2, "utf-8"),
-        verbose=verbose
+        # verbose=verbose
     )
 
     return lines_only_in_file_1, lines_only_in_file_2
