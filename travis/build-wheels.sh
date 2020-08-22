@@ -43,7 +43,6 @@ for PYBIN in /opt/python/*/bin/; do
     # spawn pipenv shell
     cd /io/
     echo PYBIN=${PYBIN} >.env
-    "${PYBIN}/pipenv" shell --python $PYBIN/python
     # install dependencies
     "${PYBIN}/pipenv" install --dev --skip-lock
     # build cython extensions
@@ -57,6 +56,7 @@ for PYBIN in /opt/python/*/bin/; do
 
 done
 
+echo "Package Installation and Testing finished sucessfully."
 # publish
 ## install twine for publishing
 #/opt/python/cp38-cp38/bin/pip install twine
