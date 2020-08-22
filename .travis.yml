@@ -8,54 +8,54 @@ stages:
 
 matrix:
   include:
-#    - sudo: required
-#      language: python
-#      python:
-#        - "3.6"
-#      env:
-#        - PIPENV_VENV_IN_PROJECT=1
-#        - PIPENV_IGNORE_VIRTUALENVS=1
-#      # command to install dependencies
-#      install:
-#        - pip install pipenv
-#        - pipenv install --dev --skip-lock
-#        - pipenv run python setup.py build_ext --inplace
-#        - pipenv install -e . --skip-lock
-#      # command to run tests
-#      script:
-#        - pipenv run pytest filediffs/tests/test_filediffs.py --doctest-cython -v
-#    - sudo: required
-#      language: python
-#      python:
-#        - "3.7"
-#      env:
-#        - PIPENV_VENV_IN_PROJECT=1
-#        - PIPENV_IGNORE_VIRTUALENVS=1
-#      # command to install dependencies
-#      install:
-#        - pip install pipenv
-#        - pipenv install --dev --skip-lock
-#        - pipenv run python setup.py build_ext --inplace
-#        - pipenv install -e . --skip-lock
-#      # command to run tests
-#      script:
-#        - pipenv run pytest filediffs/tests/test_filediffs.py --doctest-cython -v
-#    - sudo: required
-#      language: python
-#      python:
-#        - "3.8"
-#      env:
-#        - PIPENV_VENV_IN_PROJECT=1
-#        - PIPENV_IGNORE_VIRTUALENVS=1
-#      # command to install dependencies
-#      install:
-#        - pip install pipenv
-#        - pipenv install --dev --skip-lock
-#        - pipenv run python setup.py build_ext --inplace
-#        - pipenv install -e . --skip-lock
-#      # command to run tests
-#      script:
-#        - pipenv run pytest filediffs/tests/test_filediffs.py --doctest-cython -v
+    - sudo: required
+      language: python
+      python:
+        - "3.6"
+      env:
+        - PIPENV_VENV_IN_PROJECT=1
+        - PIPENV_IGNORE_VIRTUALENVS=1
+      # command to install dependencies
+      install:
+        - pip install pipenv
+        - pipenv install --dev --skip-lock
+        - pipenv run python setup.py build_ext --inplace
+        - pipenv install -e . --skip-lock
+      # command to run tests
+      script:
+        - pipenv run pytest filediffs/tests/test_filediffs.py --doctest-cython -v
+    - sudo: required
+      language: python
+      python:
+        - "3.7"
+      env:
+        - PIPENV_VENV_IN_PROJECT=1
+        - PIPENV_IGNORE_VIRTUALENVS=1
+      # command to install dependencies
+      install:
+        - pip install pipenv
+        - pipenv install --dev --skip-lock
+        - pipenv run python setup.py build_ext --inplace
+        - pipenv install -e . --skip-lock
+      # command to run tests
+      script:
+        - pipenv run pytest filediffs/tests/test_filediffs.py --doctest-cython -v
+    - sudo: required
+      language: python
+      python:
+        - "3.8"
+      env:
+        - PIPENV_VENV_IN_PROJECT=1
+        - PIPENV_IGNORE_VIRTUALENVS=1
+      # command to install dependencies
+      install:
+        - pip install pipenv
+        - pipenv install --dev --skip-lock
+        - pipenv run python setup.py build_ext --inplace
+        - pipenv install -e . --skip-lock
+      # command to run tests
+      script:
+        - pipenv run pytest filediffs/tests/test_filediffs.py --doctest-cython -v
     - sudo: required
       # build wheels using manylinux
       stage: deploy

@@ -36,26 +36,26 @@ done
 for PYBIN in /opt/python/*/bin/; do
     # check if the package can be pip installed
     "${PYBIN}/pip" install filediffs --no-index -f /io/wheelhouse
-    # run the tests for each python version.
-    # prepare packages
-    "${PYBIN}/pip" install pytest
-    "${PYBIN}/pip" install pytest-cython
-    "${PYBIN}/pip" install pipenv
-    ls -al ${PYBIN}
-    # set up pipenv environment
-    # spawn pipenv shell
-    cd /io/
-    echo PYBIN=${PYBIN} >.env
-    # install dependencies
-    "${PYBIN}/pipenv" install --dev --skip-lock  --python $PYBIN/python
-    # build cython extensions
-    "${PYBIN}/pipenv" run python setup.py build_ext --inplace
-    # install filediffs package
-    "${PYBIN}/pipenv" install -e . --skip-lock
-    # run pytest
-    "${PYBIN}/pipenv" run pytest filediffs/filediffs_python/tests/test_filediffs.py --doctest-cython -vh
-    # clean up environment
-    "${PYBIN}/pipenv" --rm
+#    # run the tests for each python version.
+#    # prepare packages
+#    "${PYBIN}/pip" install pytest
+#    "${PYBIN}/pip" install pytest-cython
+#    "${PYBIN}/pip" install pipenv
+#    ls -al ${PYBIN}
+#    # set up pipenv environment
+#    # spawn pipenv shell
+#    cd /io/
+#    echo PYBIN=${PYBIN} >.env
+#    # install dependencies
+#    "${PYBIN}/pipenv" install --dev --skip-lock  --python $PYBIN/python
+#    # build cython extensions
+#    "${PYBIN}/pipenv" run python setup.py build_ext --inplace
+#    # install filediffs package
+#    "${PYBIN}/pipenv" install -e . --skip-lock
+#    # run pytest
+#    "${PYBIN}/pipenv" run pytest filediffs/filediffs_python/tests/test_filediffs.py --doctest-cython -vh
+#    # clean up environment
+#    "${PYBIN}/pipenv" --rm
 
 done
 
