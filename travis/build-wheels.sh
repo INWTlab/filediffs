@@ -5,9 +5,6 @@ set -e -u -x
 ls -al /opt/python/
 rm -rf /opt/python/cp27-*
 rm -rf /opt/python/cp35-*
-rm -rf /opt/python/cp36-*
-rm -rf /opt/python/cp37-*
-rm -rf /opt/python/cp39-*
 ls -al /opt/python/
 
 
