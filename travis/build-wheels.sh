@@ -5,6 +5,8 @@ set -e -u -x
 ls -al /opt/python/
 rm -rf /opt/python/cp27-*
 rm -rf /opt/python/cp35-*
+rm -rf /opt/python/cp36-*
+rm -rf /opt/python/cp37-*
 ls -al /opt/python/
 
 
@@ -50,7 +52,7 @@ for PYBIN in /opt/python/*/bin/; do
     # install filediffs package
     "${PYBIN}/pipenv" install -e . --skip-lock
     # run pytest
-    "${PYBIN}/pipenv" run python filediffs/filediffs_python/tests/test_filediffs.py
+    "${PYBIN}/pipenv" run pytest filediffs/filediffs_python/tests/test_filediffs.py --doctest-cython -vh
     # clean up environment
     "${PYBIN}/pipenv" --rm
 
