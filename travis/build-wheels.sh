@@ -56,17 +56,17 @@ for PYBIN in /opt/python/*/bin/; do
 
 done
 
-echo "Package Installation and Testing finished sucessfully."
+echo "Package Installation finished sucessfully."
 # publish
-## install twine for publishing
-#/opt/python/cp38-cp38/bin/pip install twine
-#
-## build source distribution and add it to the wheelhouse which contains all files that should be published
-#/opt/python/cp38-cp38/bin/pip install 'cython==0.29.20'
-#cd /io/
-#/opt/python/cp38-cp38/bin/python /io/setup.py sdist
-#cp /io/dist/* /io/wheelhouse/
-#
-## publish wheels to pypi
-#/opt/python/cp38-cp38/bin/twine upload /io/wheelhouse/* --non-interactive --skip-existing
+# install twine for publishing
+/opt/python/cp38-cp38/bin/pip install twine
+
+# build source distribution and add it to the wheelhouse which contains all files that should be published
+/opt/python/cp38-cp38/bin/pip install 'cython==0.29.20'
+cd /io/
+/opt/python/cp38-cp38/bin/python /io/setup.py sdist
+cp /io/dist/* /io/wheelhouse/
+
+# publish wheels to pypi
+/opt/python/cp38-cp38/bin/twine upload /io/wheelhouse/* --non-interactive --skip-existing
 
