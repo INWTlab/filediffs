@@ -4,7 +4,6 @@ verify_ssl = true
 
 [dev-packages]
 pytest = {index = "pypi",version = "==5.4.3"}
-pytest-cython = {index = "pypi",version = "==0.1.0"}
 cython = {index = "pypi",version = "==0.29.20"}
 
 [packages]
