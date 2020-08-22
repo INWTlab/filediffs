@@ -1,33 +1,41 @@
-# coding: utf-8
 import os
 
 from Cython.Build import cythonize
-from setuptools import setup, find_packages, Extension
-from setuptools.command.build_py import build_py
-
-EXCLUDE_FILES = [os.path.join('filediffs', 'filediffs.py'),
-                 os.path.join('filediffs', '__init__.py'),
-                 os.path.join('filediffs', 'filediffs_script.py'),
-                 os.path.join('filediffs', 'tests', '__init__.py'),
-                 os.path.join('filediffs', 'tests', 'test_filediffs.py')]
+from Cython.Distutils.build_ext import new_build_ext
+from setuptools import Extension, setup
 
 
-def get_ext_paths(root_dir, exclude_files):
-    """get filepaths for compilation"""
-    paths = []
+def scandir(dir, files=None):
+    if files is None:
+        files = []
+    for file in os.listdir(dir):
+        path = os.path.join(dir, file)
+        if os.path.isfile(path) and path.endswith(".pyx"):
+            files.append(path.replace(os.path.sep, ".")[:-4])
+        elif os.path.isdir(path):
+            scandir(path, files)
+    return files
 
-    for root, dirs, files in os.walk(root_dir):
-        for filename in files:
-            if os.path.splitext(filename)[1] != '.pyx':
-                continue
 
-            file_path = os.path.join(root, filename)
-            if file_path in exclude_files:
-                continue
+def makeExtension(extName):
+    extPath = extName.replace(".", os.path.sep) + ".pyx"
+    # cythonize(
+    ext = Extension(
+        extName,
+        [extPath],
+        include_dirs=['.'],
+        # your include_dirs must contains the '.' for setup to search all the subfolder of the codeRootFolder
+        language="c++",
+    )
+    # compiler_directives={'language_level': 3},
+    # annotate=False,
+    # )
+    return ext
 
-            paths.append(file_path)
-    return paths
 
+extNames = scandir('filediffs')
+
+extensions = [makeExtension(name) for name in extNames]
 
 def read(f):
     """Open a file"""
@@ -36,7 +44,7 @@ def read(f):
 
 setup(
     name='filediffs',
-    version='0.1.5',
+    version='0.1.4',
     include_package_data=True,
     description="Separate two files into three files, each containing "
                 "lines observed in both files/first file only/second file only. Programmed using Cython.",
@@ -45,16 +53,14 @@ setup(
     author_email='sebastian.cattes@inwt-statistics.de',
     long_description_content_type="text/markdown",
     url='https://github.com/INWTlab/filediffs',
-    packages=find_packages(),
-    ext_modules=cythonize(Extension("filediffs",
-                                    get_ext_paths('filediffs', EXCLUDE_FILES)),
-                          compiler_directives={'language_level': 3}
-                          ),
-    cmdclass={'build_py': build_py},
+    package_data={'filediffs': [os.path.join(dp, f) for dp, dn, fn in os.walk(os.path.expanduser("filediffs")) for f in fn]},
+    extensions=extensions,
+    ext_modules=cythonize(extensions),
+    cmdclass={'build_ext': new_build_ext},
     scripts=['bin/filediffs'],
     requires=['cython'],
     license='MIT',
-    classifiers=[
+    classifiers=(
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'Natural Language :: English',
@@ -65,5 +71,5 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.8',
-    ],
+    ),
 )
