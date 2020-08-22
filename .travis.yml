@@ -23,7 +23,7 @@ matrix:
         - pipenv install -e . --skip-lock
       # command to run tests
       script:
-        - pipenv run pytest filediffs/tests/test_filediffs.py --doctest-cython -v
+        - pipenv run pytest filediffs/filediffs_python/tests/test_filediffs.py --doctest-cython -v
     - sudo: required
       language: python
       python:
@@ -39,7 +39,7 @@ matrix:
         - pipenv install -e . --skip-lock
       # command to run tests
       script:
-        - pipenv run pytest filediffs/tests/test_filediffs.py --doctest-cython -v
+        - pipenv run pytest filediffs/filediffs_python/tests/test_filediffs.py --doctest-cython -v
     - sudo: required
       language: python
       python:
@@ -55,7 +55,7 @@ matrix:
         - pipenv install -e . --skip-lock
       # command to run tests
       script:
-        - pipenv run pytest filediffs/tests/test_filediffs.py --doctest-cython -v
+        - pipenv run pytest filediffs/filediffs_python/tests/test_filediffs.py --doctest-cython -v
     - sudo: required
       # build wheels using manylinux
       stage: deploy
