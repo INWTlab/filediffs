@@ -50,7 +50,7 @@ for PYBIN in /opt/python/*/bin/; do
     # install filediffs package
     "${PYBIN}/pipenv" install -e . --skip-lock
     # run pytest
-    "${PYBIN}/pipenv" run pytest filediffs/filediffs_python/tests/test_filediffs.py
+    "${PYBIN}/pipenv" run python filediffs/filediffs_python/tests/test_filediffs.py
     # clean up environment
     "${PYBIN}/pipenv" --rm
 
