@@ -31,12 +31,29 @@ done
 
 # Test install packages
 for PYBIN in /opt/python/*/bin/; do
+    # check if the package can be pip installed
     "${PYBIN}/pip" install filediffs --no-index -f /io/wheelhouse
+    # run the tests for each python version.
+    # prepare packages
     "${PYBIN}/pip" install pytest
     "${PYBIN}/pip" install pytest-cython
-    cd /io/
-    ls
-    ("${PYBIN}/pytest" filediffs/tests/test_filediffs.py --doctest-cython -v)
+    "${PYBIN}/pip" install pipenv
+    ls -al ${PYBIN}
+    # set up pipenv environment
+    # spawn pipenv shell
+    echo PYBIN=${PYBIN} >.env
+    "${PYBIN}/pipenv" shell --python $PYBIN/python
+    # install dependencies
+    "${PYBIN}/pipenv" install --dev --skip-lock
+    # build cython extensions
+    "${PYBIN}/pipenv" run python setup.py build_ext --inplace
+    # install filediffs package
+    "${PYBIN}/pipenv" install -e . --skip-lock
+    # run pytest
+    "${PYBIN}/pipenv" run pytest filediffs/tests/test_filediffs.py --doctest-cython -v
+    # clean up environment
+    "${PYBIN}/pipenv" --rm
+
 done
 
 # publish

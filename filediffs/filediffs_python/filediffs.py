@@ -1,4 +1,4 @@
-from filediffs.filediffs_cy import file_diffs_cy
+from filediffs.filediffs_cython.filediffs_cy import file_diffs_cy
 
 
 def file_diffs(filename_1,

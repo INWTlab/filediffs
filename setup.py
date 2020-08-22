@@ -60,7 +60,7 @@ setup(
     scripts=['bin/filediffs'],
     requires=['cython'],
     license='MIT',
-    classifiers=(
+    classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'Natural Language :: English',
@@ -71,5 +71,5 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.8',
-    ),
+    ],
 )

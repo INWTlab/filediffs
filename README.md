@@ -54,7 +54,7 @@ If the output arguments are not passed to the function, the output will be saved
 the working directory in three files.
 
 ```python
-from filediffs.filediffs import file_diffs
+from filediffs.filediffs_python.filediffs import file_diffs
 lines_only_in_file_1, lines_only_in_file_2 = file_diffs(
     filename_1=b'path/to/file1.txt',
     filename_2=b'path/to/file2.txt',

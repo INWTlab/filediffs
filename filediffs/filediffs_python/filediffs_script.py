@@ -1,6 +1,6 @@
 import argparse
 
-from filediffs.filediffs import file_diffs
+from filediffs.filediffs_python import file_diffs
 
 
 def main():
