@@ -19,7 +19,6 @@ def scandir(dir, files=None):
 
 def makeExtension(extName):
     extPath = extName.replace(".", os.path.sep) + ".pyx"
-    # cythonize(
     ext = Extension(
         extName,
         [extPath],
@@ -27,9 +26,6 @@ def makeExtension(extName):
         # your include_dirs must contains the '.' for setup to search all the subfolder of the codeRootFolder
         language="c++",
     )
-    # compiler_directives={'language_level': 3},
-    # annotate=False,
-    # )
     return ext
 
 
@@ -60,7 +56,9 @@ setup(
     extensions=extensions,
     ext_modules=cythonize(extensions,
                           annotate=False,
-                          language_level=3),
+                          language_level=3,
+                          compiler_directives={'embedsignature': True},  # for pytest-cython
+                          ),
     cmdclass={'build_ext': new_build_ext},
     scripts=['bin/filediffs'],
     requires=['cython'],
