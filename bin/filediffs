@@ -1,12 +1,10 @@
 import argparse
 
-from filediffs.filediffs import file_diffs
-
+from filediffs.filediffs_python.filediffs import file_diffs
 
 # Argument Parsing
 parser = argparse.ArgumentParser("Compare files for differences. Example usage:\n"
-                                 "filediffs filediffs/tests/data/file_1.txt filediffs/tests/data/file_2.txt \n"
-                                 "filediffs filediffs/tests/data/file_1.txt filediffs/tests/data/file_2.txt "
+                                 "filediffs file_1.txt file_2.txt \n"
                                  "--out_filename_both out_both.txt "
                                  "--out_filename_only_in_file1 out_file1_only "
                                  "--out_filename_only_in_file2 out_file2_only")

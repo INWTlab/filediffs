@@ -1,5 +1,6 @@
 from filediffs.filediffs_cython.filediffs_cy import file_diffs_cy
 
+
 def file_diffs(filename_1,
                filename_2,
                outpath_lines_present_in_both_files="lines_present_in_both_files.txt",

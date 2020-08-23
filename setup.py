@@ -2,7 +2,7 @@ import os
 
 from Cython.Build import cythonize
 from Cython.Distutils.build_ext import new_build_ext
-from setuptools import Extension, setup
+from setuptools import Extension, setup, find_packages
 
 
 def scandir(dir, files=None):
@@ -40,8 +40,9 @@ def read(f):
 
 
 setup(
+    # package metadata
     name='filediffs',
-    version='0.1.5',
+    version='0.1.6',
     include_package_data=True,
     description="Separate two files into three files, each containing "
                 "lines observed in both files/first file only/second file only. Programmed using Cython.",
@@ -50,6 +51,12 @@ setup(
     author_email='sebastian.cattes@inwt-statistics.de',
     long_description_content_type="text/markdown",
     url='https://github.com/INWTlab/filediffs',
+    license='MIT',
+
+    # get packages that should be wheeled
+    packages=find_packages(),
+
+    # cython stuff
     package_data={
         'filediffs': [os.path.join(dp, f) for dp, dn, fn in os.walk(os.path.expanduser("filediffs")) for f in fn]
     },
@@ -60,9 +67,12 @@ setup(
                           compiler_directives={'embedsignature': True},  # for pytest-cython
                           ),
     cmdclass={'build_ext': new_build_ext},
+
+    # shell script
     scripts=['bin/filediffs'],
+    # requirements. paired with pyproject.toml
     requires=['cython'],
-    license='MIT',
+    # package info for pypi
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
