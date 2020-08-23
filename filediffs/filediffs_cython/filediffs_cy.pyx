@@ -16,11 +16,11 @@ from libcpp.string cimport string
 from cpython cimport bool
 
 cpdef file_diffs_cy(char*filename_1,
-                 char*filename_2,
-                 char*outpath_lines_present_in_both_files="lines_present_in_both_files.txt",
-                 char*outpath_lines_present_only_in_file1="lines_present_only_in_file1.txt",
-                 char*outpath_lines_present_only_in_file2="lines_present_only_in_file2.txt",
-                 bool verbose=True):
+                    char*filename_2,
+                    char*outpath_lines_present_in_both_files="lines_present_in_both_files.txt",
+                    char*outpath_lines_present_only_in_file1="lines_present_only_in_file1.txt",
+                    char*outpath_lines_present_only_in_file2="lines_present_only_in_file2.txt",
+                    bool verbose=True):
     cdef FILE *fp
     cdef FILE *fp2
     cdef char ln_str[6000]
@@ -121,6 +121,10 @@ cpdef file_diffs_cy(char*filename_1,
             lines_only_in_file_2.append(k)
     fclose(fp1_only)
     fclose(fp2_only)
+
+    lines_only_in_file_1 = None
+    lines_only_in_file_2 = None
+
     if verbose:
         pystring1 = "Saved lines present in both files to: " + str(outpath_lines_present_in_both_files) + "\n"
         print(pystring1)
@@ -128,5 +132,3 @@ cpdef file_diffs_cy(char*filename_1,
         print(pystring2)
         pystring3 = "Saved lines present in file 2 only to: " + str(outpath_lines_present_only_in_file2) + "\n"
         print(pystring3)
-
-    return lines_only_in_file_1, lines_only_in_file_2

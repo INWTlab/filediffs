@@ -14,7 +14,7 @@ def test_file_diffs_cy():
     outfile_p_2 = Path(__file__).parent / "lines_present_only_in_file2.txt"
 
     # act
-    lines_only_in_file_1, lines_only_in_file_2 = file_diffs_cy(
+    file_diffs_cy(
         filename_1=bytes(fp1, "utf-8"), filename_2=bytes(fp2, "utf-8"),
         outpath_lines_present_in_both_files=bytes(str(outfile_p_both), "utf-8"),
         outpath_lines_present_only_in_file1=bytes(str(outfile_p_1), "utf-8"),

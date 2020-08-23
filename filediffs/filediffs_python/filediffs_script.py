@@ -1,6 +1,6 @@
 import argparse
 
-from filediffs.filediffs_python import file_diffs
+from filediffs.filediffs_python.filediffs import file_diffs
 
 
 def main():
@@ -27,4 +27,4 @@ def main():
     kwargs["outpath_lines_present_only_in_file1"] = args.out_filename_only_in_file1 or "lines_present_only_in_file1.txt"
     kwargs["outpath_lines_present_only_in_file2"] = args.out_filename_only_in_file2 or "lines_present_only_in_file2.txt"
 
-    lines_only_in_file_11, lines_only_in_file_22 = file_diffs(verbose=True, **kwargs)
+    file_diffs(verbose=True, **kwargs)

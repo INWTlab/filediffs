@@ -41,7 +41,7 @@ Pipenv by
 
 The file `build_cython_setup.py` defines the cython build process.
 
-The cpp files can be build using `pipenv run python build_cython_setup.py build_ext --inplace`.
+The cpp files can be build using `pipenv run python setup.py build_ext --inplace`.
 
 
  # 2. Usage:
@@ -55,7 +55,7 @@ the working directory in three files.
 
 ```python
 from filediffs.filediffs_python.filediffs import file_diffs
-lines_only_in_file_1, lines_only_in_file_2 = file_diffs(
+file_diffs(
     filename_1=b'path/to/file1.txt',
     filename_2=b'path/to/file2.txt',
     outpath_lines_present_in_both_files=b'output_path/to/lines_in_both.txt',
