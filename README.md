@@ -1,6 +1,6 @@
 # The `filediffs` package
 [![Build Status](https://travis-ci.org/INWTlab/filediffs.svg?branch=master)](https://travis-ci.org/INWTlab/filediffs)
-company
+
 `filediffs` takes two files and separates them into 
 1. lines found in both files
 2. lines found only in file 1
@@ -39,41 +39,40 @@ Pipenv by
 1. installing pipenv `pip install pipenv`
 2. calling `pipenv install` to install from Pipfile.lock
 
-The file `build_cython_setup.py` defines the cython build process.
+The file `setup.py` defines the cython build process.
 
 The cpp files can be build using `pipenv run python setup.py build_ext --inplace`.
 
 
  # 2. Usage:
  ## 2.1 Interactive in Python
-The `file_diffs` function requires two arguments with the path to the files you wish to compare.
+The `file_diffs` function requires two arguments, `filename_1` and `filename_2`, with the path to the files you wish to compare.
 
 In addition, three optional output arguments can be passed to the functions, defining the output
-file where to save the lines present only in the first / second or in both input files.
+files.
+
 If the output arguments are not passed to the function, the output will be saved into 
-the working directory in three files.
+the working directory.
 
 ```python
 from filediffs.filediffs_python.filediffs import file_diffs
 file_diffs(
-    filename_1=b'path/to/file1.txt',
-    filename_2=b'path/to/file2.txt',
-    outpath_lines_present_in_both_files=b'output_path/to/lines_in_both.txt',
-    outpath_lines_present_only_in_file1=b'output_path/to/lines_only_in_file1.txt',
-    outpath_lines_present_only_in_file2=b'output_path/to/lines_only_in_file2.txt',
+    filename_1='path/to/file1.txt',
+    filename_2='path/to/file2.txt',
+    outpath_lines_present_in_both_files='output_path/to/lines_in_both.txt',
+    outpath_lines_present_only_in_file1='output_path/to/lines_only_in_file1.txt',
+    outpath_lines_present_only_in_file2='output_path/to/lines_only_in_file2.txt',
 )
 ```
-To use the function in interaction with cython, 
-the file paths have to passed to the function currently as bytestrings.
 
 ## 2.2 From the terminal
-Inside the package directory, an example script `filediffs_script.py` is provided.
-
-It can be used to separate files from the terminal:
+The `filediffs` package comes with a build in command line interface. This way it can be used to separate files from the terminal:
 ```shell script
-# To separate two files, simply pass the filepath to `filediffs/filediffs_script.py`
-python filediffs/filediffs_script.py filediffs/tests/data/file_1.txt filediffs/tests/data/file_2.txt
+# To separate two files, simply install the package with pip
+pip install filediffs
+# and call
+filediffs path/to/file1.txt path/to/file2.txt
 
 # If you want to define the filenames of the separated ouput files, optional arguments are provided for the script. 
-python filediffs/filediffs_script.py filediffs/tests/data/file_1.txt filediffs/tests/data/file_2.txt --out_filename_both out_both.txt --out_filename_only_in_file1 out_file1_only.txt --out_filename_only_in_file2 out_file2_only.txt
+filediffs path/to/file1.txt path/to/file2.txt --out_filename_both both_files.txt --out_filename_only_in_file1 file1_only.txt --out_filename_only_in_file2 file2_only.txt
 ```
