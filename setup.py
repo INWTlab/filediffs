@@ -29,20 +29,23 @@ def makeExtension(extName):
     return ext
 
 
-extNames = scandir('filediffs')
-
-extensions = [makeExtension(name) for name in extNames]
-
-
 def read(f):
     """Open a file"""
     return open(f, encoding='utf-8').read()
 
 
+extNames = scandir('filediffs')
+
+extensions = [makeExtension(name) for name in extNames]
+
+packages = [package for package in find_packages() if "test" not in package]
+package_data = [os.path.join(dp, f) for dp, dn, fn in os.walk(os.path.expanduser("filediffs")) for f in fn if
+                "test" not in dp]
+
 setup(
     # package metadata
     name='filediffs',
-    version='0.1.8',
+    version='0.1.9',
     include_package_data=True,
     description="Separate two files into three files, each containing "
                 "lines observed in both files/first file only/second file only. Programmed using Cython.",
@@ -54,12 +57,10 @@ setup(
     license='MIT',
 
     # get packages that should be wheeled
-    packages=find_packages(),
+    packages=packages,
 
     # cython stuff
-    package_data={
-        'filediffs': [os.path.join(dp, f) for dp, dn, fn in os.walk(os.path.expanduser("filediffs")) for f in fn]
-    },
+    package_data={'filediffs': package_data},
     extensions=extensions,
     ext_modules=cythonize(extensions,
                           annotate=False,
@@ -74,7 +75,7 @@ setup(
     requires=['cython'],
     # package info for pypi
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Natural Language :: English',
         'License :: OSI Approved :: MIT License',
