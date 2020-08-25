@@ -1,8 +1,6 @@
 notifications:
   email: false
 # begin chunk for https://github.com/joerick/cibuildwheel windows/mac deployment
-# Skip Python 2.7 and Python 3.5
-CIBW_SKIP: cp27-* cp35-*
 
 language: python
 python:
@@ -128,4 +126,6 @@ matrix:
 env:
   global:
     - TWINE_USERNAME=__token__
+    # Skip Python 2.7 and Python 3.5
+    - CIBW_SKIP=cp27-*
     # Note: TWINE_PASSWORD is set to a PyPI API token in Travis settings
