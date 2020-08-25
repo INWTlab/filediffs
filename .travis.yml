@@ -1,5 +1,23 @@
 notifications:
   email: false
+# begin chunk test for https://github.com/joerick/cibuildwheel windows deployment
+language: python
+python:
+  - 3.8
+
+before_install:
+  - |
+    if [[ "$TRAVIS_OS_NAME" = windows ]]; then
+        choco install python --version 3.8.0
+        export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
+        # make sure it's on PATH as 'python3'
+        ln -s /c/Python38/python.exe /c/Python38/python3.exe
+    fi
+
+script:
+  - python3 setup.py install
+  - pytest
+# end chunk test for https://github.com/joerick/cibuildwheel windows deployment
 
 stages:
   - test
@@ -78,3 +96,22 @@ matrix:
       script:
         - docker run --rm -e PLAT=$PLAT -e TWINE_USERNAME=$TWINE_USERNAME -e TWINE_PASSWORD=$TWINE_PASSWORD -v `pwd`:/io $DOCKER_IMAGE $PRE_CMD /io/travis/build-wheels.sh
         - ls wheelhouse/
+    # begin chunk test for https://github.com/joerick/cibuildwheel windows deployment
+    # Deploy on windows
+    - stage: deploy
+      name: Build and deploy Windows wheels
+      os: windows
+      language: shell
+      install: python3 -m pip install cibuildwheel==1.5.5
+      script: python3 -m cibuildwheel --output-dir wheelhouse
+      after_success: |
+        # have a look at the wheelhouse.
+        ls wheelhouse/
+        python3 -m pip install twine
+        python3 -m twine upload --skip-existing wheelhouse/*.whl
+
+
+env:
+  global:
+    - TWINE_USERNAME=__token__
+    # Note: TWINE_PASSWORD is set to a PyPI API token in Travis settings
