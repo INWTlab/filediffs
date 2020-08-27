@@ -10,7 +10,7 @@ parser.add_argument("filename_1", help="Specify the first filename.")
 parser.add_argument("filename_2", help="Specify the second filename.")
 parser.add_argument(
     "--outpath_lines_present_in_both_files",
-    default='outpath_lines_present_in_both_files.txt',
+    default='lines_present_in_both_files.txt',
     help="Specify filename to save rows present in both files. (Default: lines_present_in_both_files.txt)")
 parser.add_argument(
     "--outpath_lines_present_only_in_file1",
