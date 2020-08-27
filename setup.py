@@ -45,7 +45,7 @@ package_data = [os.path.join(dp, f) for dp, dn, fn in os.walk(os.path.expanduser
 setup(
     # package metadata
     name='filediffs',
-    version='0.1.10',
+    version='0.1.11',
     include_package_data=True,
     description="Separate two files into three files, each containing "
                 "lines observed in both files/first file only/second file only. Programmed using Cython.",
