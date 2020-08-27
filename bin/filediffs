@@ -6,18 +6,18 @@ from filediffs.filediffs_python.filediffs import file_diffs
 
 # Argument Parsing
 parser = argparse.ArgumentParser("Compare files for differences.\nExample usage: filediffs file_1.txt file_2.txt ")
-parser.add_argument("file_name_1", help="Specify the first filename.")
-parser.add_argument("file_name_2", help="Specify the second filename.")
+parser.add_argument("filename_1", help="Specify the first filename.")
+parser.add_argument("filename_2", help="Specify the second filename.")
 parser.add_argument(
     "--out_filename_both",
-    default='lines_present_in_both_files.txt',
+    default='outpath_lines_present_in_both_files.txt',
     help="Specify filename to save rows present in both files. (Default: lines_present_in_both_files.txt)")
 parser.add_argument(
-    "--out_filename_only_in_file1",
+    "--outpath_lines_present_only_in_file1",
     default='lines_present_only_in_file1.txt',
     help="Specify filename to save rows present only in file 1. (Default: lines_present_only_in_file1.txt)")
 parser.add_argument(
-    "--out_filename_only_in_file2",
+    "--outpath_lines_present_only_in_file2",
     default='lines_present_only_in_file2.txt',
     help="Specify filename to save rows present only in file 2. (Default: lines_present_only_in_file2.txt)")
 
@@ -25,4 +25,5 @@ parser.add_argument(
 kwargs = parser.parse_args()
 kwargs = vars(kwargs)
 
+# function execution
 file_diffs(verbose=True, **kwargs)
